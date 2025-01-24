@@ -11,6 +11,9 @@ public class Jelly : MonoBehaviour, IPossesable
     private float maxMovementSpeed;
 
     [SerializeField]
+    private float jumpForce;
+
+    [SerializeField]
     private GameObject activeColliders;
 
     [SerializeField]
@@ -22,24 +25,14 @@ public class Jelly : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D jellyRigidbody;
 
-    [SerializeField]
-    private float activeScale;
-
     private GameObject view;
     private bool isActive;
-    private float initialXScale;
 
     public bool Active => isActive;
 
+    public IngredientType IngerdientType => IngredientType.Jelly;
+
     public void OnActionDown()
-    {
-    }
-
-    public void OnActionUp()
-    {
-    }
-
-    public void OnAction()
     {
         if (jellyRigidbody.linearVelocityY > 0.05f || jellyRigidbody.linearVelocityY < -0.05f)
         {
@@ -48,31 +41,42 @@ public class Jelly : MonoBehaviour, IPossesable
 
         activeColliders.SetActive(!isActive);
         inActiveColliders.SetActive(isActive);
+
+        isActive = true;
+        jellyRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
         var raycast = Physics2D.RaycastAll(jellyRigidbody.position, Vector2.down, 1.2f);
-        if(raycast.Any(r => r.transform.CompareTag("Platform"))){
+        if (raycast.Any(r => r.transform.CompareTag("Platform")))
+        {
             var hit = raycast.First(r => r.transform.CompareTag("Platform"));
             activeColliders.transform.rotation = Quaternion.FromToRotation(Vector2.up, hit.normal);
             activeColliders.transform.position = hit.point;
-        } else
-        {
-            activeColliders.transform.rotation = Quaternion.FromToRotation(Vector2.up, inActiveColliders.transform.up);
-        }
-        if (isActive)
-        {
-            isActive = false;
-            jellyRigidbody.constraints = RigidbodyConstraints2D.None;
-            var scale = jellyRigidbody.transform.localScale;
-            scale.x = initialXScale;
-            jellyRigidbody.transform.localScale = scale;
         }
         else
         {
-            isActive = true;
-            jellyRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-            var scale = jellyRigidbody.transform.localScale;
-            scale.x = activeScale;
-            jellyRigidbody.transform.localScale = scale;
+            activeColliders.transform.rotation = Quaternion.FromToRotation(Vector2.up, inActiveColliders.transform.up);
         }
+    }
+
+    public void OnActionUp()
+    {
+        if (!isActive)
+        {
+            return;
+        }
+
+        activeColliders.SetActive(!isActive);
+        inActiveColliders.SetActive(isActive);
+        isActive = false;
+        jellyRigidbody.constraints = RigidbodyConstraints2D.None;
+
+        jellyRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void OnAction()
+    {
+
+       
     }
 
     public void OnMove(Vector2 moveDirection)
@@ -92,7 +96,6 @@ public class Jelly : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(jellyViewPrefab, transform);
-        initialXScale = jellyRigidbody.transform.localScale.x;
     }
 
     public void OnDeath()
@@ -110,9 +113,5 @@ public class Jelly : MonoBehaviour, IPossesable
     {
         var velocity = moveDirection * movementSpeed * Time.deltaTime;
         return transform.position + new Vector3(velocity.x, velocity.y, 0) * Time.deltaTime * 5;
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(jellyRigidbody.position, jellyRigidbody.position + Vector2.down * 1.2f);
     }
 }

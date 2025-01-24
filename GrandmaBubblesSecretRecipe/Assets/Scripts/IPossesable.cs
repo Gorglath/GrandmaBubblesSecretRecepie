@@ -3,6 +3,7 @@ using UnityEngine;
 
 public interface IPossesable
 {
+    public IngredientType IngerdientType { get; }
     public void OnPossessed(PlayerController playerController);
     public void OnMove(Vector2 moveDirection);
     public void OnAction();

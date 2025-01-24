@@ -24,6 +24,7 @@ public class LeafyBall : MonoBehaviour, IPossesable
     private bool isActive;
     private bool tryingToActivate;
 
+    public IngredientType IngerdientType => IngredientType.Cabbage;
     public void OnActionDown()
     {
     }
