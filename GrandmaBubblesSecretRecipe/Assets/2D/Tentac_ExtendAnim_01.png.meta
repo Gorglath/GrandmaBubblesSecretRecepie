@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 9c937195b214347b2a7e044d3927533e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6470213457376482724
+    second: Tentac_ExtendAnim_01_0
+  - first:
+      213: -6023739703770260487
+    second: Tentac_ExtendAnim_01_1
+  - first:
+      213: -4666834262759175280
+    second: Tentac_ExtendAnim_01_2
+  - first:
+      213: 1677298271768654984
+    second: Tentac_ExtendAnim_01_3
+  - first:
+      213: -4482022931928360093
+    second: Tentac_ExtendAnim_01_4
+  - first:
+      213: 4175491863796043050
+    second: Tentac_ExtendAnim_01_5
+  - first:
+      213: -8830345334913951083
+    second: Tentac_ExtendAnim_01_6
+  - first:
+      213: -3768602256033949613
+    second: Tentac_ExtendAnim_01_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1100
+        width: 256
+        height: 857
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a590ebdbd0dac950800000000000000
+      internalID: 6470213457376482724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1100
+        width: 256
+        height: 767
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb5b5197a0676ca0800000000000000
+      internalID: -6023739703770260487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_2
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1100
+        width: 255
+        height: 660
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b0e96c6f21c3fb0800000000000000
+      internalID: -4666834262759175280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_3
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 1100
+        width: 215
+        height: 585
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884b52734e5f64710800000000000000
+      internalID: 1677298271768654984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_4
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 76
+        width: 214
+        height: 485
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b5143e3e7acc1c0800000000000000
+      internalID: -4482022931928360093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_5
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 76
+        width: 214
+        height: 416
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2dc8183ab352f930800000000000000
+      internalID: 4175491863796043050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_6
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 70
+        width: 215
+        height: 682
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a1d6cf3bf447580800000000000000
+      internalID: -8830345334913951083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentac_ExtendAnim_01_7
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 61
+        width: 197
+        height: 946
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3585c5d073c33bbc0800000000000000
+      internalID: -3768602256033949613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 247922c0aa55341b28a0dd82789120c2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tentac_ExtendAnim_01_0: 6470213457376482724
+      Tentac_ExtendAnim_01_1: -6023739703770260487
+      Tentac_ExtendAnim_01_2: -4666834262759175280
+      Tentac_ExtendAnim_01_3: 1677298271768654984
+      Tentac_ExtendAnim_01_4: -4482022931928360093
+      Tentac_ExtendAnim_01_5: 4175491863796043050
+      Tentac_ExtendAnim_01_6: -8830345334913951083
+      Tentac_ExtendAnim_01_7: -3768602256033949613
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
