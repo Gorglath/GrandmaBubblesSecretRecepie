@@ -25,7 +25,7 @@ public class Cheese : MonoBehaviour, IPossesable
     private bool isFacingRight;
     private bool isActive;
 
-    public IngredientType IngerdientType => IngredientType.Chicken;
+    public IngredientType IngerdientType => IngredientType.Cheese;
     public void OnAction()
     {
 
@@ -100,5 +100,30 @@ public class Cheese : MonoBehaviour, IPossesable
     public void OnActionUp()
     {
         isActive = false;
+    }
+
+    public bool isCooked()
+    {
+        return gameObject.TryGetComponent<Cooked>(out var cooked) && cooked.cookValue > 1.0f;
+    }
+
+    public bool isSauced()
+    {
+        return gameObject.TryGetComponent<Sauce>(out _);
+    }
+
+    public bool isGrated()
+    {
+        return gameObject.TryGetComponent<GrateState>(out var state) && state.grateValue >= 1.0f;
+    }
+
+    public bool isPowdered()
+    {
+        return gameObject.TryGetComponent<FlourPowder>(out _);
+    }
+
+    public bool isSliced()
+    {
+        return gameObject.TryGetComponent<Sliced>(out _);
     }
 }

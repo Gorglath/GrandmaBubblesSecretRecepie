@@ -8,5 +8,7 @@ public enum IngredientType
     Slugde,
     Jelly,
     Tentacle,
-    Chicken
+    Chicken,
+    Cheese,
+    Flour
 }

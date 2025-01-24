@@ -124,4 +124,29 @@ public class Sludge : MonoBehaviour, IPossesable
         Gizmos.DrawLine(sludgeRigidbody.position, sludgeRigidbody.position + Vector2.right * 0.8f);
         Gizmos.DrawLine(sludgeRigidbody.position, sludgeRigidbody.position + Vector2.left * 0.8f);
     }
+
+    public bool isCooked()
+    {
+        return gameObject.TryGetComponent<Cooked>(out var cooked) && cooked.cookValue > 1.0f;
+    }
+
+    public bool isSauced()
+    {
+        return gameObject.TryGetComponent<Sauce>(out _);
+    }
+
+    public bool isGrated()
+    {
+        return gameObject.TryGetComponent<GrateState>(out var state) && state.grateValue >= 1.0f;
+    }
+
+    public bool isPowdered()
+    {
+        return gameObject.TryGetComponent<FlourPowder>(out _);
+    }
+
+    public bool isSliced()
+    {
+        return gameObject.TryGetComponent<Sliced>(out _);
+    }
 }
