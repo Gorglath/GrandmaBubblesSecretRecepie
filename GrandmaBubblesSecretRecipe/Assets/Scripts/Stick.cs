@@ -37,6 +37,7 @@ public class Stick : MonoBehaviour, IPossesable
     {
         isActive = true;
         holdDuration = 0;
+        viewAnimator.ResetTrigger("Mouse up");
         viewAnimator.SetTrigger("Mouse down");
     }
 
