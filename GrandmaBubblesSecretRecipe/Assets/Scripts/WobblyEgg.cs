@@ -12,6 +12,9 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     private float breakMovementSpeed;
 
     [SerializeField]
+    private float jumpForce;
+
+    [SerializeField]
     private GameObject eggViewPrefab;
 
     [SerializeField]
@@ -19,6 +22,8 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
     private GameObject view;
     private PlayerController playerController;
+    private bool grounded;
+
     public void OnActionDown()
     {
     }
@@ -26,8 +31,17 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     public void OnActionUp()
     {
     }
+
     public void OnAction()
-    {}
+    {
+        if (!grounded)
+        {
+            return;
+        }
+
+        grounded = false;
+        eggRigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+    }
 
     public void OnMove(Vector2 moveDirection)
     {
@@ -63,6 +77,11 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Platform"))
+        {
+            grounded = true;
+        }
+
         if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)
         {
             playerController.Die();

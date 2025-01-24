@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - ClimbableWall
+  - Platform
   layers:
   - Default
   - TransparentFX

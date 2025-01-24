@@ -48,6 +48,7 @@ MonoBehaviour:
   movementSpeed: 300
   maxMovementSpeed: 10
   breakMovementSpeed: 6
+  jumpForce: 4
   eggViewPrefab: {fileID: 4792468493930219614, guid: e72b26eb2484115488f82bf439cceaba, type: 3}
   eggRigidbody: {fileID: 5716662519356371558}
 --- !u!50 &5716662519356371558
