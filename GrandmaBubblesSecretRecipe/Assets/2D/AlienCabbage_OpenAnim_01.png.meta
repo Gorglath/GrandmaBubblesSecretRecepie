@@ -132,6 +132,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -434,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AlienCabbage_OpenAnim_01_0: -2479347632136760181
+      AlienCabbage_OpenAnim_01_1: 3859708832918464706
+      AlienCabbage_OpenAnim_01_10: 7500704888572743176
+      AlienCabbage_OpenAnim_01_11: -5940583636755565596
+      AlienCabbage_OpenAnim_01_12: -4311978855313825539
+      AlienCabbage_OpenAnim_01_2: 5847664189604919122
+      AlienCabbage_OpenAnim_01_3: -1289447196384301088
+      AlienCabbage_OpenAnim_01_4: 2074362734254802037
+      AlienCabbage_OpenAnim_01_5: 4181041701199090424
+      AlienCabbage_OpenAnim_01_6: -5038410696259123556
+      AlienCabbage_OpenAnim_01_7: -9100271024211316200
+      AlienCabbage_OpenAnim_01_8: 5150259027091761000
+      AlienCabbage_OpenAnim_01_9: 7654622303537897398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

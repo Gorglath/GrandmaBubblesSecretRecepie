@@ -20,6 +20,7 @@ public class LeafyBall : MonoBehaviour, IPossesable
     [SerializeField]
     private GameObject bounceObject;
 
+    private Animator viewAnimator;
     private GameObject view;
     private bool isActive;
     private bool tryingToActivate;
@@ -46,7 +47,7 @@ public class LeafyBall : MonoBehaviour, IPossesable
             isActive = false;
             leafRigidbody.constraints = RigidbodyConstraints2D.None;
             bounceObject.SetActive(isActive);
-            view.SetActive(!isActive);
+            viewAnimator.SetTrigger("Mouse up");
             return;
         }
 
@@ -79,6 +80,7 @@ public class LeafyBall : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(leafViewPrefab, transform);
+        viewAnimator = view.GetComponent<Animator>();
     }
 
     public void OnDeath()
@@ -121,7 +123,17 @@ public class LeafyBall : MonoBehaviour, IPossesable
             leafRigidbody.linearVelocity = Vector2.zero;
             leafRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             bounceObject.SetActive(isActive);
-            view.SetActive(!isActive);
+            viewAnimator.SetTrigger("Mouse down");
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!isActive)
+        {
+            return;
+        }
+
+        viewAnimator.SetTrigger("Got Hit");
     }
 }
