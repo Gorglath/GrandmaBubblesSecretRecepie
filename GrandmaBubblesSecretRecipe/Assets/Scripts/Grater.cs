@@ -21,7 +21,6 @@ public class Grater : MonoBehaviour
                 if (availablePlayers[i].grateValue > 1.0f)
                 {
                     var playerController = availablePlayers[i].GetComponentInParent<PlayerController>();
-                    Debug.Log(availablePlayers[i].grateValue);
                     previousLocations.RemoveAt(i);
                     availablePlayers.RemoveAt(i);
                     playerController.Die(true);
