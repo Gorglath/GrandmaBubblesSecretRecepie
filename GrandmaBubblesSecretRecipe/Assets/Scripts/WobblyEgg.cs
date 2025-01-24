@@ -24,6 +24,7 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     private PlayerController playerController;
     private bool grounded;
 
+    public IngredientType IngerdientType => IngredientType.Egg;
     public void OnActionDown()
     {
     }

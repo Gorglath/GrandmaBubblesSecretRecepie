@@ -84,7 +84,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5731859235920993126
 Transform:
   m_ObjectHideFlags: 0
@@ -195,11 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 300
   maxMovementSpeed: 10
+  jumpForce: 5
   activeColliders: {fileID: 6654460685635166573}
   inActiveColliders: {fileID: 505994241065246998}
   jellyViewPrefab: {fileID: 5373934858511267131, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
   jellyRigidbody: {fileID: 759966265232511322}
-  activeScale: 1
 --- !u!50 &759966265232511322
 Rigidbody2D:
   serializedVersion: 5

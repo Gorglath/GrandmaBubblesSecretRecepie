@@ -22,6 +22,7 @@ public class Sludge : MonoBehaviour, IPossesable
     private bool attachedToWall;
     private bool grounded;
 
+    public IngredientType IngerdientType => IngredientType.Slugde;
     public void OnAction()
     {
         if (!grounded)
