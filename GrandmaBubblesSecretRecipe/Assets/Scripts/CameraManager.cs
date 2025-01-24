@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CameraManager : MonoBehaviour
 {
@@ -108,5 +109,14 @@ public class CameraManager : MonoBehaviour
     public bool Is01(float a)
     {
         return a > 0.05f && a < 0.95f;
+    }
+    
+    public Vector3 GetSpawnLocation()
+    {
+        var centerPosition = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        var randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f);
+        var offsettedPosition = centerPosition - (movementOffset + randomOffset);
+        offsettedPosition.z = 0.0f;
+        return offsettedPosition;
     }
 }
