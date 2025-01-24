@@ -4,6 +4,9 @@ using UnityEngine;
 public class HotWok : MonoBehaviour
 {
     [SerializeField]
+    private CookedView cookDisplayBar;
+
+    [SerializeField]
     private float cookAmountPerSecond;
 
     private List<Cooked> availablePlayers = new List<Cooked>();
@@ -30,6 +33,8 @@ public class HotWok : MonoBehaviour
             {
                 var state = collision.attachedRigidbody.gameObject.AddComponent<Cooked>();
                 availablePlayers.Add(state);
+                var cookedDisplay = Instantiate(cookDisplayBar, collision.attachedRigidbody.transform.parent);
+                cookedDisplay.Bind(state);
             }
             else
             {

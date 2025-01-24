@@ -4,6 +4,9 @@ using UnityEngine;
 public class Grater : MonoBehaviour
 {
     [SerializeField]
+    private GrateView grateView;
+
+    [SerializeField]
     private float grateAmountPerMove;
 
     private List<GrateState> availablePlayers = new List<GrateState>();
@@ -41,6 +44,8 @@ public class Grater : MonoBehaviour
                 var state = collision.attachedRigidbody.gameObject.AddComponent<GrateState>();
                 availablePlayers.Add(state);
                 previousLocations.Add(state.transform.position);
+                var grateDisplay = Instantiate(grateView, collision.attachedRigidbody.transform.parent);
+                grateDisplay.Bind(state);
             } else
             {
                 availablePlayers.Add(exisitingState);
