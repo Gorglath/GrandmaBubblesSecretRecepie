@@ -16,6 +16,7 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     private GameObject view;
     private PossessableGenerator availableGenerator;
     private PlayerController playerController;
+    public IngredientType IngerdientType => IngredientType.None;
     public void OnActionDown()
     {
     }

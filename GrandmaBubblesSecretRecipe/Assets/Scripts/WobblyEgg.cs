@@ -24,6 +24,7 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     private PlayerController playerController;
     private bool grounded;
 
+    public IngredientType IngerdientType => IngredientType.Egg;
     public void OnActionDown()
     {
     }
@@ -80,6 +81,19 @@ public class WobblyEgg : MonoBehaviour, IPossesable
         if (collision.CompareTag("Platform"))
         {
             grounded = true;
+        }
+
+        var possessable = collision.GetComponentInParent<IPossesable>();
+        if (possessable != null && possessable is Jelly jelly && jelly.Active)
+        {
+            eggRigidbody.linearVelocity = Vector2.zero;
+            eggRigidbody.angularVelocity = 0.0f;
+            return;
+        }
+
+        if(collision.TryGetComponent<PossessableGenerator>(out _))
+        {
+            return;
         }
 
         if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)

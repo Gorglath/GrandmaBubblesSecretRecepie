@@ -32,6 +32,7 @@ public class Stick : MonoBehaviour, IPossesable
     private float initialYScale;
     private float holdDuration;
 
+    public IngredientType IngerdientType => IngredientType.Tentacle;
     public void OnActionDown()
     {
         isActive = true;
