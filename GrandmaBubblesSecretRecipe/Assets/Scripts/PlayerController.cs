@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        defaultPossesable.SetPosition(activePossesable.GetCenterPosition());
         activePossesable.OnDeath();
         activePossesable = defaultPossesable;
         defaultPossesable.OnPossessed(this);

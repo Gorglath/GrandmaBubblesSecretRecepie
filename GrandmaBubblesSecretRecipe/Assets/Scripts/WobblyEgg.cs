@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LeafyBall : MonoBehaviour, IPossesable
+public class WobblyEgg : MonoBehaviour, IPossesable
 {
     [SerializeField]
     private float movementSpeed;
@@ -9,48 +9,33 @@ public class LeafyBall : MonoBehaviour, IPossesable
     private float maxMovementSpeed;
 
     [SerializeField]
-    private GameObject leafViewPrefab;
+    private float breakMovementSpeed;
 
     [SerializeField]
-    private Rigidbody2D leafRigidbody;
+    private GameObject eggViewPrefab;
 
     [SerializeField]
-    private GameObject bounceObject;
+    private Rigidbody2D eggRigidbody;
 
     private GameObject view;
-    private bool isActive;
+    private PlayerController playerController;
 
     public void OnAction()
-    {
-        if(leafRigidbody.linearVelocityY > 0.05f || leafRigidbody.linearVelocityY < -0.05f)
-        {
-            return;
-        }
-
-        isActive = !isActive;
-        leafRigidbody.linearVelocity = Vector2.zero;
-        leafRigidbody.constraints = isActive ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
-        bounceObject.SetActive(isActive);
-        view.SetActive(!isActive);
-    }
+    {}
 
     public void OnMove(Vector2 moveDirection)
     {
-        if (isActive)
-        {
-            return;
-        }
-
-        var currentSpeed = leafRigidbody.linearVelocity.magnitude;
+        var currentSpeed = eggRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
-        var actualForce = moveStep * (1 - currentSpeed / maxMovementSpeed);
-        leafRigidbody.AddForce(actualForce);
+        var actualForce = moveStep.x * (1 - currentSpeed / maxMovementSpeed);
+        eggRigidbody.AddTorque(actualForce *-1);
     }
 
     public void OnPossessed(PlayerController playerController)
     {
-        view = Instantiate(leafViewPrefab, transform);
+        view = Instantiate(eggViewPrefab, transform);
+        this.playerController = playerController;
     }
 
     public void OnDeath()
@@ -68,5 +53,13 @@ public class LeafyBall : MonoBehaviour, IPossesable
     {
         var velocity = moveDirection * movementSpeed * Time.deltaTime;
         return transform.position + new Vector3(velocity.x, velocity.y, 0) * Time.deltaTime * 5;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)
+        {
+            playerController.Die();
+        }
     }
 }
