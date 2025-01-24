@@ -17,7 +17,7 @@ public class flour : MonoBehaviour, IPossesable
     private float jumpForce;
 
     [SerializeField]
-    private GameObject chickenView;
+    private GameObject flourView;
 
     [SerializeField]
     private Rigidbody2D flourRigidbody;
@@ -51,7 +51,7 @@ public class flour : MonoBehaviour, IPossesable
 
     public void OnPossessed(PlayerController playerController)
     {
-        mainView = Instantiate(chickenView, transform);
+        mainView = Instantiate(flourView, transform);
     }
 
     public void OnDeath()
