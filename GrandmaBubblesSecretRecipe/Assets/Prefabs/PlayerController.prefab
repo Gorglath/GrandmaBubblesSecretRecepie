@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPossesable: {fileID: 2782662679955528705}
+  killSelfHoldTime: 3
 --- !u!1001 &4782709615484565350
 PrefabInstance:
   m_ObjectHideFlags: 0

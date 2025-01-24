@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
         // Add player controller with the given input.
         numberOfPlayers++;
         var controller = input.GetComponent<PlayerController>();
-        controller.transform.position = cameraManager.GetSpawnLocation();
         cameraManager.RegisterPlayer(controller);
     }
 

@@ -560,6 +560,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KillSelf"",
+                    ""type"": ""Button"",
+                    ""id"": ""3af5d74e-f4fd-4f93-8607-03a3d46f93af"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -582,6 +591,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""InputAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de96a9a4-d92b-4907-b97f-8a7aeeddf768"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KillSelf"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -618,6 +638,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_InputAction = m_Player.FindAction("InputAction", throwIfNotFound: true);
+        m_Player_KillSelf = m_Player.FindAction("KillSelf", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -805,12 +826,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_InputAction;
+    private readonly InputAction m_Player_KillSelf;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
         public PlayerActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @InputAction => m_Wrapper.m_Player_InputAction;
+        public InputAction @KillSelf => m_Wrapper.m_Player_KillSelf;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -826,6 +849,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @InputAction.started += instance.OnInputAction;
             @InputAction.performed += instance.OnInputAction;
             @InputAction.canceled += instance.OnInputAction;
+            @KillSelf.started += instance.OnKillSelf;
+            @KillSelf.performed += instance.OnKillSelf;
+            @KillSelf.canceled += instance.OnKillSelf;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -836,6 +862,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @InputAction.started -= instance.OnInputAction;
             @InputAction.performed -= instance.OnInputAction;
             @InputAction.canceled -= instance.OnInputAction;
+            @KillSelf.started -= instance.OnKillSelf;
+            @KillSelf.performed -= instance.OnKillSelf;
+            @KillSelf.canceled -= instance.OnKillSelf;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -879,5 +908,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInputAction(InputAction.CallbackContext context);
+        void OnKillSelf(InputAction.CallbackContext context);
     }
 }

@@ -8,14 +8,39 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private BubblePossesable defaultPossesable;
 
+    [SerializeField]
+    private float killSelfHoldTime;
+
     IPossesable activePossesable;
     private Vector2 moveVector;
     private CameraManager cameraManager;
+    private DateTime startedKillingTime;
 
     private void OnEnable()
     {
         defaultPossesable.RegisterController(this);
         Possess(defaultPossesable);
+        var playerInput = GetComponent<PlayerInput>();
+        var killSelfAction = playerInput.actions["KillSelf"];
+
+        killSelfAction.started += OnKillSelfStart;
+        killSelfAction.canceled += OnKillSelfEnd;
+    }
+
+    private void OnKillSelfEnd(InputAction.CallbackContext context)
+    {
+        var holdDuration = DateTime.Now - startedKillingTime;
+        if(killSelfHoldTime > holdDuration.TotalSeconds)
+        {
+            return;
+        }
+
+        Die();
+    }
+
+    private void OnKillSelfStart(InputAction.CallbackContext context)
+    {
+        this.startedKillingTime = DateTime.Now;
     }
 
     public void RegisterCameraManager(CameraManager cameraManager)
