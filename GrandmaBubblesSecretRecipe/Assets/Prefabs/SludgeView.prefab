@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1633133446566077815}
   - component: {fileID: 7166853590001985766}
-  - component: {fileID: 1391700031334566414}
-  - component: {fileID: 3550612678986876272}
+  - component: {fileID: 3274309999449540073}
+  - component: {fileID: 7168163800945376871}
   - component: {fileID: 3914651353232543074}
   m_Layer: 0
   m_Name: SludgeView
@@ -90,8 +90,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1391700031334566414
-CircleCollider2D:
+--- !u!70 &3274309999449540073
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,9 +125,10 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!58 &3550612678986876272
-CircleCollider2D:
+  m_Size: {x: 3.79, y: 2.03}
+  m_Direction: 1
+--- !u!70 &7168163800945376871
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,7 +162,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.45
+  m_Size: {x: 3.79, y: 2.03}
+  m_Direction: 1
 --- !u!95 &3914651353232543074
 Animator:
   serializedVersion: 7
