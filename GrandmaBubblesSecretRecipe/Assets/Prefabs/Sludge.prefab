@@ -74,6 +74,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 200
   maxMovementSpeed: 10
+  jumpForce: 5
   sludgeMainViewPrefab: {fileID: 5373934858511267131, guid: c96492b5fc2a7ad40a6a6a9064b6a0e4, type: 3}
-  sludgeActiveViewPrefab: {fileID: 5373934858511267131, guid: 4637e9d0265e36f43af401d15695bcb3, type: 3}
   sludgeRigidbody: {fileID: 5054368347130097460}
