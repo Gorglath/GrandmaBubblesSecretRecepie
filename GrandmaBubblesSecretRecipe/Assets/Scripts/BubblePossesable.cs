@@ -14,14 +14,15 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     private Rigidbody2D bubbleRigidbody;
 
     private GameObject view;
-    IPossesable availablePossesable;
+    private PossessableGenerator availableGenerator;
     private PlayerController playerController;
 
     public void OnAction()
     {
-        if(availablePossesable != null)
+        if(availableGenerator != null)
         {
-            playerController.Possess(availablePossesable);
+            var possessable = availableGenerator.GetPossesableInstance(playerController.transform);
+            playerController.Possess(possessable);
         }
     }
 
@@ -31,7 +32,7 @@ public class BubblePossesable : MonoBehaviour, IPossesable
         bubbleRigidbody.linearVelocity = new Vector3(moveStep.x, moveStep.y, 0);
     }
 
-    public void OnPossessed()
+    public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(bubbleViewPrefab, transform);
     }
@@ -41,19 +42,19 @@ public class BubblePossesable : MonoBehaviour, IPossesable
         Destroy(view);
     }
 
-    public void RegisterPossesable(IPossesable possesable)
+    public void RegisterPossesable(PossessableGenerator generator)
     {
-        availablePossesable = possesable;
+        availableGenerator = generator;
     }
 
-    public void DeregisterPossesable(IPossesable possesable)
+    public void DeregisterPossesable(PossessableGenerator generator)
     {
-        if (availablePossesable != possesable)
+        if (availableGenerator != generator)
         {
             return;
         }
 
-        availablePossesable = null;
+        availableGenerator = null;
     }
 
     internal void RegisterController(PlayerController playerController)

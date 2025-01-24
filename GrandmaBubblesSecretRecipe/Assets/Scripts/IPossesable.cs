@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface IPossesable
 {
-    public void OnPossessed();
+    public void OnPossessed(PlayerController playerController);
     public void OnMove(Vector2 moveDirection);
     public void OnAction();
     public void OnDeath();

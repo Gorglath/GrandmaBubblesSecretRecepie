@@ -51,13 +51,14 @@ public class PlayerController : MonoBehaviour
     {
         activePossesable?.OnDeath();
         activePossesable = possesable;
-        activePossesable.OnPossessed();
+        activePossesable.OnPossessed(this);
     }
+
     public void Die()
     {
         activePossesable.OnDeath();
         activePossesable = defaultPossesable;
-        defaultPossesable.OnPossessed();
+        defaultPossesable.OnPossessed(this);
     }
 
     public Vector3 GetPossessedPosition()
