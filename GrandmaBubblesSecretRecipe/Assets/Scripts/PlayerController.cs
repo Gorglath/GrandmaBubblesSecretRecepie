@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveVector;
     private CameraManager cameraManager;
     private DateTime startedKillingTime;
+    private GameManager gameManager;
 
     private void OnEnable()
     {
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
         }
 
         Die();
+    }
+
+    public void RegisterGameManager(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 
     private void OnKillSelfStart(InputAction.CallbackContext context)
@@ -98,7 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         if (didAddToRecipe)
         {
-            // Add To Recipe.
+            gameManager.DeliverIngredient(activePossesable);
         }
         defaultPossesable.SetPosition(activePossesable.GetCenterPosition());
         activePossesable.OnDeath();

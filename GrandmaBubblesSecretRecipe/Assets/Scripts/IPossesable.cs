@@ -12,4 +12,10 @@ public interface IPossesable
     public void OnDeath();
     public Vector3 GetCenterPosition();
     public Vector3 GetPredictedPosition(Vector2 movement);
+
+    public bool isCooked();
+    public bool isSauced();
+    public bool isGrated();
+    public bool isPowdered();
+    public bool isSliced();
 }
