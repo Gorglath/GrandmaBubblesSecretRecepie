@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752584325625515214}
+  - component: {fileID: 2785146953816866631}
+  - component: {fileID: 8512922662540921358}
+  - component: {fileID: 7837622274135912092}
   m_Layer: 0
   m_Name: CheeseView
   m_TagString: Untagged
@@ -26,52 +29,18 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2593671468207577210}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3851308941264002631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2593671468207577210}
-  - component: {fileID: 5239003694051221007}
-  - component: {fileID: 5459231421397609505}
-  m_Layer: 0
-  m_Name: View
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2593671468207577210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851308941264002631}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.092, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1752584325625515214}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5239003694051221007
+--- !u!212 &2785146953816866631
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851308941264002631}
+  m_GameObject: {fileID: 340883368807813442}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -109,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 2450968453154690209, guid: 2550887add2fa4177a1cab2e03d9954c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,13 +89,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5459231421397609505
+--- !u!60 &8512922662540921358
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851308941264002631}
+  m_GameObject: {fileID: 340883368807813442}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -157,8 +126,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.61, y: 4.39}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -166,7 +135,86 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 1
+    - - {x: 0.615, y: -1.995}
+      - {x: 0.78499997, y: -1.915}
+      - {x: 1.115, y: -1.865}
+      - {x: 1.3249999, y: -1.755}
+      - {x: 1.475, y: -1.655}
+      - {x: 1.615, y: -1.545}
+      - {x: 1.6949999, y: -1.4649999}
+      - {x: 1.795, y: -1.3249999}
+      - {x: 1.795, y: -1.245}
+      - {x: 1.745, y: -1.0649999}
+      - {x: 1.645, y: -0.995}
+      - {x: 1.535, y: -0.895}
+      - {x: 1.475, y: -0.755}
+      - {x: 1.4449999, y: -0.575}
+      - {x: 1.4649999, y: -0.36499998}
+      - {x: 1.435, y: -0.255}
+      - {x: 1.165, y: 0.315}
+      - {x: 0.78499997, y: 1.0749999}
+      - {x: 0.685, y: 1.105}
+      - {x: 0.565, y: 1.175}
+      - {x: 0.36499998, y: 1.435}
+      - {x: 0.345, y: 1.515}
+      - {x: 0.275, y: 1.875}
+      - {x: 0.265, y: 1.9649999}
+      - {x: 0.21499999, y: 2.0349998}
+      - {x: 0.125, y: 2.135}
+      - {x: 0.044999998, y: 2.185}
+      - {x: -0.044999998, y: 2.185}
+      - {x: -0.16499999, y: 2.085}
+      - {x: -0.255, y: 1.9649999}
+      - {x: -0.445, y: 1.675}
+      - {x: -0.49499997, y: 1.5749999}
+      - {x: -0.49499997, y: 1.475}
+      - {x: -0.545, y: 1.3249999}
+      - {x: -0.715, y: 1.2049999}
+      - {x: -1.055, y: 0.515}
+      - {x: -1.115, y: 0.385}
+      - {x: -1.115, y: 0.085}
+      - {x: -1.185, y: -0.13499999}
+      - {x: -1.275, y: -0.295}
+      - {x: -1.345, y: -0.36499998}
+      - {x: -1.495, y: -0.465}
+      - {x: -1.6949999, y: -0.955}
+      - {x: -1.755, y: -1.185}
+      - {x: -1.795, y: -1.245}
+      - {x: -1.795, y: -1.355}
+      - {x: -1.615, y: -1.545}
+      - {x: -1.405, y: -1.7249999}
+      - {x: -1.3149999, y: -1.7249999}
+      - {x: -1.135, y: -1.735}
+      - {x: -0.995, y: -1.775}
+      - {x: -0.85499996, y: -1.8549999}
+      - {x: -0.685, y: -2.0049999}
+      - {x: -0.59499997, y: -2.135}
+      - {x: -0.385, y: -2.175}
+      - {x: -0.205, y: -2.185}
+      - {x: 0.13499999, y: -2.185}
+      - {x: 0.255, y: -2.165}
+      - {x: 0.445, y: -2.125}
+      - {x: 0.515, y: -2.095}
+  m_UseDelaunayMesh: 0
+--- !u!95 &7837622274135912092
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340883368807813442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad0cea8bb3e8d4065aa8ece560e50b81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
