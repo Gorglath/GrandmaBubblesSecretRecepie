@@ -7,5 +7,6 @@ public enum IngredientType
     Cabbage,
     Slugde,
     Jelly,
-    Tentacle
+    Tentacle,
+    Chicken
 }
