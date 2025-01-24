@@ -83,6 +83,19 @@ public class WobblyEgg : MonoBehaviour, IPossesable
             grounded = true;
         }
 
+        var possessable = collision.GetComponentInParent<IPossesable>();
+        if (possessable != null && possessable is Jelly jelly && jelly.Active)
+        {
+            eggRigidbody.linearVelocity = Vector2.zero;
+            eggRigidbody.angularVelocity = 0.0f;
+            return;
+        }
+
+        if(collision.TryGetComponent<PossessableGenerator>(out _))
+        {
+            return;
+        }
+
         if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)
         {
             playerController.Die();
