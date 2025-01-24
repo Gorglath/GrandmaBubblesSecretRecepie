@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,45 +7,25 @@ public class GameManager : MonoBehaviour
     private PlayerInputManager playerInputManager;
 
     [SerializeField]
+    private PlayerInput playerPrefab;
+
+    [SerializeField]
     private CameraManager cameraManager;
 
-    private int numberOfPlayers;
-    private void OnEnable()
-    {
-        numberOfPlayers = 0;
-        playerInputManager.onPlayerJoined += PlayerJoined;
-        playerInputManager.onPlayerLeft += PlayerLeft;
-    }
 
-    private void PlayerLeft(PlayerInput input)
+    public void StartGame((int, InputDevice)[] playerIndices)
     {
-        // Remove player controller.
-        if (numberOfPlayers == 0)
+        foreach (var playerIndex in playerIndices)
         {
-            return;
+            var player = playerInputManager.JoinPlayer(playerIndex.Item1, pairWithDevice: playerIndex.Item2);
+            PlayerJoined(player);
         }
-        numberOfPlayers--;
-        var controller = input.GetComponent<PlayerController>();
-        cameraManager.DeregisterPlayer(controller);
     }
 
     private void PlayerJoined(PlayerInput input)
     {
-        if(numberOfPlayers >= PlayerInputManager.instance.maxPlayerCount)
-        {
-            return;
-        }
-
-        // Add player controller with the given input.
-        numberOfPlayers++;
         var controller = input.GetComponent<PlayerController>();
         controller.transform.position = cameraManager.GetSpawnLocation();
         cameraManager.RegisterPlayer(controller);
-    }
-
-    private void OnDisable()
-    {
-        playerInputManager.onPlayerJoined -= PlayerJoined;
-        playerInputManager.onPlayerLeft -= PlayerLeft;
     }
 }

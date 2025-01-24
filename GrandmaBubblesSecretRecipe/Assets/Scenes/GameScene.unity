@@ -3147,7 +3147,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3204,6 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputManager: {fileID: 1732179303}
+  playerPrefab: {fileID: 6452742978914271550, guid: eca9618e394c0a8478e9f169f454e44f, type: 3}
   cameraManager: {fileID: 414604689}
 --- !u!1 &1805016211
 GameObject:
