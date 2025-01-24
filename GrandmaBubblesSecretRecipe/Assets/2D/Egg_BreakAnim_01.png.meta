@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: d6a713c3924994c979897c9daf2085d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4536616876556098310
+    second: Egg_BreakAnim_01_0
+  - first:
+      213: -9076019141715529421
+    second: Egg_BreakAnim_01_1
+  - first:
+      213: 5583229016898627703
+    second: Egg_BreakAnim_01_2
+  - first:
+      213: 3084010246756131143
+    second: Egg_BreakAnim_01_3
+  - first:
+      213: -6305514275741856587
+    second: Egg_BreakAnim_01_4
+  - first:
+      213: 5907460261046536387
+    second: Egg_BreakAnim_01_5
+  - first:
+      213: -4670920186220744798
+    second: Egg_BreakAnim_01_6
+  - first:
+      213: 4202380484537618380
+    second: Egg_BreakAnim_01_7
+  - first:
+      213: -5046291941590765641
+    second: Egg_BreakAnim_01_8
+  - first:
+      213: -8760731182649694303
+    second: Egg_BreakAnim_01_9
+  - first:
+      213: 1427654803062267131
+    second: Egg_BreakAnim_01_10
+  - first:
+      213: -4697783729645674836
+    second: Egg_BreakAnim_01_11
+  - first:
+      213: -7486345544655324654
+    second: Egg_BreakAnim_01_12
+  - first:
+      213: 2612900225258239018
+    second: Egg_BreakAnim_01_13
+  - first:
+      213: 3206610607211396643
+    second: Egg_BreakAnim_01_14
+  - first:
+      213: -1514625506812759410
+    second: Egg_BreakAnim_01_15
+  - first:
+      213: 3165421834941179254
+    second: Egg_BreakAnim_01_16
+  - first:
+      213: -2010119001187598979
+    second: Egg_BreakAnim_01_17
+  - first:
+      213: 4459158398267036058
+    second: Egg_BreakAnim_01_18
+  - first:
+      213: -4730807162184614761
+    second: Egg_BreakAnim_01_19
+  - first:
+      213: 318688231371238041
+    second: Egg_BreakAnim_01_20
+  - first:
+      213: -1316283398817089964
+    second: Egg_BreakAnim_01_21
+  - first:
+      213: -5217802432539493811
+    second: Egg_BreakAnim_01_22
+  - first:
+      213: 2101267685397915747
+    second: Egg_BreakAnim_01_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_0
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 972
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b1b21630d45fe30800000000000000
+      internalID: 4536616876556098310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 678
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7416099cafa9cca20800000000000000
+      internalID: 3084010246756131143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_23
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 197
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368662ea3d3392d10800000000000000
+      internalID: 2101267685397915747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_24
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 509
+        width: 530
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3468b670b6f4f44bcb36d270d0a3488c
+      internalID: -1584563667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_25
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 505
+        width: 520
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28a3f3a5592a49ecaf3aed9e45f764f
+      internalID: 1606101704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg_BreakAnim_01_26
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 511
+        width: 492
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c934aa2c72dfd44f7853ebc99b9b3722
+      internalID: 521075729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e90639855baf24f95ab69d73143979c1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Egg_BreakAnim_01_24: -1584563667
+      Egg_BreakAnim_01_25: 1606101704
+      Egg_BreakAnim_01_26: 521075729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

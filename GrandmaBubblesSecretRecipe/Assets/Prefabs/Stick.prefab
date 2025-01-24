@@ -44,7 +44,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 2
@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27c83e5d9a09d54080448c547b8c643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 815
+  movementSpeed: 800
   maxMovementSpeed: 10
   maxJumpDuration: 2
   maxJumpScale: 1.2
   stickViewPrefab: {fileID: 8253013222417206905, guid: c1eaeab0b883732419273b5c6a9a1c98, type: 3}
   stickRigidbody: {fileID: 5054368347130097460}
-  jumpForceMinMax: {x: 2, y: 6}
+  jumpForceMinMax: {x: 8, y: 16}

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2379333173808879277}
   - component: {fileID: 277287592188056325}
-  - component: {fileID: 4834377435385140269}
-  - component: {fileID: 4374831681857661405}
+  - component: {fileID: 7907273975646459773}
+  - component: {fileID: 7416743286850629755}
+  - component: {fileID: 8208690660047058531}
   m_Layer: 0
   m_Name: WooblyEggView
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 4646649027328027380, guid: a50ac64e6e5f57e46916c19e9a41d151, type: 3}
+  m_Sprite: {fileID: 3084010246756131143, guid: d6a713c3924994c979897c9daf2085d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,8 +90,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &4834377435385140269
-EdgeCollider2D:
+--- !u!60 &7907273975646459773
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,26 +125,45 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.03
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.59, y: 1.79}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.07569909, y: -0.4764452}
-  - {x: -0.24675179, y: -0.4004078}
-  - {x: -0.3968506, y: -0.22170067}
-  - {x: -0.37965202, y: 0.0809145}
-  - {x: -0.28918457, y: 0.21823406}
-  - {x: -0.11303139, y: 0.45572853}
-  - {x: 0.104047775, y: 0.46676064}
-  - {x: 0.2540207, y: 0.3008337}
-  - {x: 0.3251686, y: 0.12323284}
-  - {x: 0.3809681, y: -0.1298275}
-  - {x: 0.29670143, y: -0.3360691}
-  - {x: 0.11713052, y: -0.43501377}
-  m_AdjacentStartPoint: {x: 0, y: -0.49}
-  m_AdjacentEndPoint: {x: 0, y: -0.45}
-  m_UseAdjacentStartPoint: 1
-  m_UseAdjacentEndPoint: 1
---- !u!58 &4374831681857661405
-CircleCollider2D:
+    m_Paths:
+    - - {x: 0.72499996, y: -0.545}
+      - {x: 0.775, y: -0.435}
+      - {x: 0.79499996, y: -0.295}
+      - {x: 0.79499996, y: -0.085}
+      - {x: 0.755, y: 0.13499999}
+      - {x: 0.675, y: 0.325}
+      - {x: 0.49499997, y: 0.60499996}
+      - {x: 0.24499999, y: 0.84499997}
+      - {x: 0.105, y: 0.895}
+      - {x: -0.114999995, y: 0.895}
+      - {x: -0.295, y: 0.825}
+      - {x: -0.48499998, y: 0.59499997}
+      - {x: -0.59499997, y: 0.435}
+      - {x: -0.755, y: 0.105}
+      - {x: -0.78499997, y: -0.055}
+      - {x: -0.78499997, y: -0.385}
+      - {x: -0.705, y: -0.565}
+      - {x: -0.53499997, y: -0.73499995}
+      - {x: -0.325, y: -0.85499996}
+      - {x: -0.225, y: -0.885}
+      - {x: -0.105, y: -0.895}
+      - {x: 0.13499999, y: -0.895}
+      - {x: 0.265, y: -0.875}
+      - {x: 0.42499998, y: -0.815}
+      - {x: 0.555, y: -0.72499996}
+  m_UseDelaunayMesh: 0
+--- !u!70 &7416743286850629755
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -176,5 +196,28 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.55
+  m_Offset: {x: -0.004747179, y: -0.01903481}
+  m_Size: {x: 1.7042203, y: 1.8756582}
+  m_Direction: 0
+--- !u!95 &8208690660047058531
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792468493930219614}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42352ad569e0e471088586f6a90f65b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
