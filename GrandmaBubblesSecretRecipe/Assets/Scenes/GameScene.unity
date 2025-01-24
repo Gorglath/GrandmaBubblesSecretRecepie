@@ -3604,8 +3604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584ace40adb41904bb2316240d486586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possessablePrefab: {fileID: 2686769469382756887, guid: 0e85da354c203a947b4f4c6a96f15513, type: 3}
-  spawnLocation: {fileID: 0}
+  possessablePrefab: {fileID: 8148055012762507339, guid: 23e879fa9833abc4681f8659044cf325, type: 3}
+  spawnLocation: {fileID: 15993599}
 --- !u!1001 &2130271096
 PrefabInstance:
   m_ObjectHideFlags: 0
