@@ -12,10 +12,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CameraManager cameraManager;
 
-    private void OnEnable()
-    {
-        playerInputManager.onPlayerJoined += PlayerJoined;
-    }
+    [SerializeField]
+    private Recipe[] recipes;
+
+    [SerializeField]
+    private int numberOfRecipes;
+
+    [SerializeField]
+    private GameObject newRecipeVFX;
+    
+    [SerializeField]
+    private GameObject gameOverVFX;
+
+    private Recipe activeRecipe;
+    private int activeRecipeIndex;
+    private int completedRecipies;
 
     public void StartGame((int, InputDevice)[] playerIndices)
     {
@@ -24,6 +35,8 @@ public class GameManager : MonoBehaviour
             var player = playerInputManager.JoinPlayer(playerIndex.Item1, pairWithDevice: playerIndex.Item2);
             PlayerJoined(player);
         }
+
+        ChooseRandomRecipe();
     }
 
     private void PlayerJoined(PlayerInput input)
@@ -31,5 +44,36 @@ public class GameManager : MonoBehaviour
         var controller = input.GetComponent<PlayerController>();
         controller.transform.position = cameraManager.GetSpawnLocation();
         cameraManager.RegisterPlayer(controller);
+        controller.RegisterGameManager(this);
+    }
+
+    public void DeliverIngredient(IPossesable ingredient)
+    {
+        if (activeRecipe.UpdateListing(ingredient))
+        {
+            completedRecipies++;
+            if(completedRecipies >= numberOfRecipes)
+            {
+                // Finish game.
+                var gameOverEffect = Instantiate(gameOverVFX);
+                return;
+            }
+
+            ChooseRandomRecipe();
+        }
+    }
+
+    public void ChooseRandomRecipe()
+    {
+        var recipeIndex = Random.Range(0, recipes.Length);
+        if(recipeIndex == activeRecipeIndex)
+        {
+            recipeIndex = activeRecipeIndex == 0 ? Random.Range(1, recipes.Length) : activeRecipeIndex - 1;
+        }
+        var recipe = recipes[recipeIndex];
+        activeRecipe = recipe;
+
+        var newRecipeEffect = Instantiate(newRecipeVFX);
+        Destroy(newRecipeEffect, 5.0f);
     }
 }

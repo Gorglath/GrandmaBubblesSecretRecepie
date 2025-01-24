@@ -6194,7 +6194,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6253,6 +6253,16 @@ MonoBehaviour:
   playerInputManager: {fileID: 1732179303}
   playerPrefab: {fileID: 6452742978914271550, guid: eca9618e394c0a8478e9f169f454e44f, type: 3}
   cameraManager: {fileID: 414604689}
+  recipes:
+  - {fileID: 11400000, guid: 2017f7fbdc1ec314ea4741a4c9f8c284, type: 2}
+  - {fileID: 11400000, guid: 79c1abd83a93bdc41bf396ce56e052ef, type: 2}
+  - {fileID: 11400000, guid: 2ed773b69ed840545a9cf3e37a2533c6, type: 2}
+  - {fileID: 11400000, guid: 7276e8ba603f4b54195b8e8335b4fc2b, type: 2}
+  - {fileID: 11400000, guid: 25ba37c0c6ac7e748b09326f944ce290, type: 2}
+  - {fileID: 11400000, guid: e325b5203b1bbfa43a3578f4a8fc818b, type: 2}
+  numberOfRecipes: 3
+  newRecipeVFX: {fileID: 7067492024985820986, guid: 2f16ee78f526e654db9668e032706360, type: 3}
+  gameOverVFX: {fileID: 0}
 --- !u!1 &1781184774
 GameObject:
   m_ObjectHideFlags: 0
