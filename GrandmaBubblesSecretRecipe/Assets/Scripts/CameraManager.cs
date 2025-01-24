@@ -107,6 +107,6 @@ public class CameraManager : MonoBehaviour
 
     public bool Is01(float a)
     {
-        return a > 0 && a < 0.95f;
+        return a > 0.05f && a < 0.95f;
     }
 }

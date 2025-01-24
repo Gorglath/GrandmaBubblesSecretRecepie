@@ -33,10 +33,11 @@ public class PlayerController : MonoBehaviour
         activePossesable.OnAction();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (activePossesable != null && !IsLeavingCameraRect()) {
-            activePossesable.OnMove(moveVector);
+        if (activePossesable != null) {
+            var newMoveVector = !IsLeavingCameraRect() ? moveVector : Vector2.zero;
+            activePossesable.OnMove(newMoveVector);
         }
     }
 

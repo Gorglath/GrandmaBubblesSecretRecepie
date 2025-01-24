@@ -10,6 +10,9 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     [SerializeField]
     private GameObject bubbleViewPrefab;
 
+    [SerializeField]
+    private Rigidbody2D bubbleRigidbody;
+
     private GameObject view;
     IPossesable availablePossesable;
     private PlayerController playerController;
@@ -25,7 +28,7 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     public void OnMove(Vector2 moveDirection)
     {
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
-        transform.position += new Vector3(moveStep.x, moveStep.y, 0);
+        bubbleRigidbody.linearVelocity = new Vector3(moveStep.x, moveStep.y, 0);
     }
 
     public void OnPossessed()
@@ -65,7 +68,7 @@ public class BubblePossesable : MonoBehaviour, IPossesable
 
     public Vector3 GetPredictedPosition(Vector2 moveDirection)
     {
-        var moveStep = moveDirection * movementSpeed * Time.deltaTime;
-        return transform.position + new Vector3(moveStep.x, moveStep.y, 0);
+        var velocity = moveDirection * movementSpeed * Time.deltaTime;
+        return transform.position + new Vector3(velocity.x, velocity.y, 0) * Time.deltaTime * 5;
     }
 }
