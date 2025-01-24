@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4202200122069018693}
   m_Layer: 0
   m_Name: Flour
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +76,6 @@ MonoBehaviour:
   maxMovementSpeed: 10
   ariseForce: 700
   jumpForce: 8
-  chickenView: {fileID: 340883368807813442, guid: bafb329c688fac34fbf443978770c258, type: 3}
+  flourView: {fileID: 340883368807813442, guid: bafb329c688fac34fbf443978770c258, type: 3}
   flourRigidbody: {fileID: 5414971548511210816}
   flourSpreadDistance: 10

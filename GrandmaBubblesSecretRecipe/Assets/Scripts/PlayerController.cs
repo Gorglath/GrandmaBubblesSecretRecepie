@@ -94,8 +94,12 @@ public class PlayerController : MonoBehaviour
         activePossesable.OnPossessed(this);
     }
 
-    public void Die()
+    public void Die(bool didAddToRecipe = false)
     {
+        if (didAddToRecipe)
+        {
+            // Add To Recipe.
+        }
         defaultPossesable.SetPosition(activePossesable.GetCenterPosition());
         activePossesable.OnDeath();
         activePossesable = defaultPossesable;

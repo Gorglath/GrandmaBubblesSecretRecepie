@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4851749036497459177}
   m_Layer: 0
   m_Name: LeafyBall
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
