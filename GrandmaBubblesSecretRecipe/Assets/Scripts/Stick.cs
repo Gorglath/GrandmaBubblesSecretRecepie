@@ -27,9 +27,9 @@ public class Stick : MonoBehaviour, IPossesable
     [SerializeField]
     private Vector2 jumpForceMinMax;
 
+    private Animator viewAnimator;
     private GameObject view;
     private bool isActive;
-    private float initialYScale;
     private float holdDuration;
 
     public IngredientType IngerdientType => IngredientType.Tentacle;
@@ -37,18 +37,17 @@ public class Stick : MonoBehaviour, IPossesable
     {
         isActive = true;
         holdDuration = 0;
+        viewAnimator.SetTrigger("Mouse down");
     }
 
     public void OnActionUp()
     {
         isActive = false;
-        var scale = view.transform.localScale;
-        scale.y = initialYScale;
-        view.transform.localScale = scale;
 
         var forceDirection = stickRigidbody.transform.up;
         var forceAmount = Mathf.Lerp(jumpForceMinMax.x, jumpForceMinMax.y, holdDuration / maxJumpDuration);
         stickRigidbody.AddForce(forceDirection * forceAmount, ForceMode2D.Impulse);
+        viewAnimator.SetTrigger("Mouse up");
     }
 
     public void OnAction()
@@ -72,7 +71,7 @@ public class Stick : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(stickViewPrefab, transform);
-        initialYScale = view.transform.localScale.y;
+        viewAnimator = view.GetComponent<Animator>();
     }
 
     public void OnDeath()
@@ -109,8 +108,5 @@ public class Stick : MonoBehaviour, IPossesable
             return;
         }
         holdDuration += Time.deltaTime;
-
-        scale.y = Mathf.Lerp(initialYScale, maxJumpScale, holdDuration / maxJumpDuration);
-        view.transform.localScale = scale;
     }
 }
