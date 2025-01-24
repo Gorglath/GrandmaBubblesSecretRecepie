@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 50e0ba7a89c444cb58ddf77246133f3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2268300844525165247
+    second: Jell_MoveAnims_01_0
+  - first:
+      213: -5535037511331268292
+    second: Jell_MoveAnims_01_1
+  - first:
+      213: -3130381332675198313
+    second: Jell_MoveAnims_01_2
+  - first:
+      213: -7091670241514603006
+    second: Jell_MoveAnims_01_3
+  - first:
+      213: 8899971402417090022
+    second: Jell_MoveAnims_01_4
+  - first:
+      213: -6639975703932278776
+    second: Jell_MoveAnims_01_5
+  - first:
+      213: -2472767407715386343
+    second: Jell_MoveAnims_01_6
+  - first:
+      213: -1212955996209554935
+    second: Jell_MoveAnims_01_7
+  - first:
+      213: 5394895181248842272
+    second: Jell_MoveAnims_01_8
+  - first:
+      213: -6921780584305166734
+    second: Jell_MoveAnims_01_9
+  - first:
+      213: 2838053929183374617
+    second: Jell_MoveAnims_01_10
+  - first:
+      213: -6274777164344383319
+    second: Jell_MoveAnims_01_11
+  - first:
+      213: -3802052730537936209
+    second: Jell_MoveAnims_01_12
+  - first:
+      213: -6153270004881934099
+    second: Jell_MoveAnims_01_13
+  - first:
+      213: -8789603050330674212
+    second: Jell_MoveAnims_01_14
+  - first:
+      213: -1828885353042017615
+    second: Jell_MoveAnims_01_15
+  - first:
+      213: 1660404128561481651
+    second: Jell_MoveAnims_01_16
+  - first:
+      213: 7530765237271620007
+    second: Jell_MoveAnims_01_17
+  - first:
+      213: 2025926788020623110
+    second: Jell_MoveAnims_01_18
+  - first:
+      213: 2049649629074879471
+    second: Jell_MoveAnims_01_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_0
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1663
+        width: 378
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba14a1a99f9a7f10800000000000000
+      internalID: 2268300844525165247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_1
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 1660
+        width: 384
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3933a695b89f23b0800000000000000
+      internalID: -5535037511331268292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_2
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1660
+        width: 384
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792816e63c6ae84d0800000000000000
+      internalID: -3130381332675198313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_3
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 1660
+        width: 381
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e30561d73559d90800000000000000
+      internalID: -7091670241514603006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_4
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 1660
+        width: 381
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eda43026dc038b70800000000000000
+      internalID: 8899971402417090022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_5
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1151
+        width: 383
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80864e107411ad3a0800000000000000
+      internalID: -6639975703932278776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_6
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1151
+        width: 383
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91cf5fad427feadd0800000000000000
+      internalID: -2472767407715386343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1151
+        width: 388
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90adfbda2f6ba2fe0800000000000000
+      internalID: -1212955996209554935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_8
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1151
+        width: 388
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02acdce75948eda40800000000000000
+      internalID: 5394895181248842272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_9
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 1151
+        width: 378
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2767b435b35e0ff90800000000000000
+      internalID: -6921780584305166734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 639
+        width: 378
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d606e030bc26720800000000000000
+      internalID: 2838053929183374617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_11
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 638
+        width: 382
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8258a0a638be8a0800000000000000
+      internalID: -6274777164344383319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_12
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 638
+        width: 382
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa7bfa8f256c3bc0800000000000000
+      internalID: -3802052730537936209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_13
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 638
+        width: 381
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de832ff28813b9aa0800000000000000
+      internalID: -6153270004881934099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_14
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 638
+        width: 381
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdba954589e050680800000000000000
+      internalID: -8789603050330674212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 126
+        width: 383
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b20405167e7e96e0800000000000000
+      internalID: -1828885353042017615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_16
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 126
+        width: 383
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b7cf7af1c0fa0710800000000000000
+      internalID: 1660404128561481651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_17
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 127
+        width: 387
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a96f666517a28860800000000000000
+      internalID: 7530765237271620007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_18
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 127
+        width: 387
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607daec0ea98d1c10800000000000000
+      internalID: 2025926788020623110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jell_MoveAnims_01_19
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 127
+        width: 378
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3f4076a71d17c10800000000000000
+      internalID: 2049649629074879471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
