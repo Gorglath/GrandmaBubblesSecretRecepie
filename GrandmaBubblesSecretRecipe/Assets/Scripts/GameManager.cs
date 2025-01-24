@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CameraManager cameraManager;
 
+    private void OnEnable()
+    {
+        playerInputManager.onPlayerJoined += PlayerJoined;
+    }
 
     public void StartGame((int, InputDevice)[] playerIndices)
     {
