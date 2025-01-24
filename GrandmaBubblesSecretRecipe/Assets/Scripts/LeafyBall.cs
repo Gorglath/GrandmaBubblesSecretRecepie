@@ -9,6 +9,9 @@ public class LeafyBall : MonoBehaviour, IPossesable
     private float maxMovementSpeed;
 
     [SerializeField]
+    private float ariseSpeed;
+
+    [SerializeField]
     private GameObject leafViewPrefab;
 
     [SerializeField]
@@ -19,6 +22,8 @@ public class LeafyBall : MonoBehaviour, IPossesable
 
     private GameObject view;
     private bool isActive;
+    private bool tryingToActivate;
+
     public void OnActionDown()
     {
     }
@@ -34,11 +39,17 @@ public class LeafyBall : MonoBehaviour, IPossesable
             return;
         }
 
-        isActive = !isActive;
-        leafRigidbody.linearVelocity = Vector2.zero;
-        leafRigidbody.constraints = isActive ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
-        bounceObject.SetActive(isActive);
-        view.SetActive(!isActive);
+        if (isActive)
+        {
+            tryingToActivate = false;
+            isActive = false;
+            leafRigidbody.constraints = RigidbodyConstraints2D.None;
+            bounceObject.SetActive(isActive);
+            view.SetActive(!isActive);
+            return;
+        }
+
+        tryingToActivate = true;
     }
 
     public void OnMove(Vector2 moveDirection)
@@ -53,6 +64,15 @@ public class LeafyBall : MonoBehaviour, IPossesable
         moveStep.y = 0.0f;
         var actualForce = moveStep * (1 - currentSpeed / maxMovementSpeed);
         leafRigidbody.AddForce(actualForce);
+    }
+    public void Update()
+    {
+        if (!tryingToActivate)
+        {
+            return;
+        }
+
+        Arise();
     }
 
     public void OnPossessed(PlayerController playerController)
@@ -75,5 +95,32 @@ public class LeafyBall : MonoBehaviour, IPossesable
     {
         var velocity = moveDirection * movementSpeed * Time.deltaTime;
         return transform.position + new Vector3(velocity.x, velocity.y, 0) * Time.deltaTime * 5;
+    }
+
+    public void Arise()
+    {
+        var maxAngle = 1f;
+        var lookDirection = leafRigidbody.transform.up;
+        var cross = Vector3.Cross(Vector2.up, lookDirection);
+        var sign = Mathf.Sign(cross.z);
+
+        var angle = Vector2.Angle(Vector2.up, lookDirection);
+
+        angle *= sign;
+
+        var absAngle = Mathf.Abs(angle);
+
+        if (absAngle > maxAngle)
+        {
+            leafRigidbody.AddTorque(-sign * Time.deltaTime * ariseSpeed);
+        } else
+        {
+            isActive = true;
+            tryingToActivate = false;
+            leafRigidbody.linearVelocity = Vector2.zero;
+            leafRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            bounceObject.SetActive(isActive);
+            view.SetActive(!isActive);
+        }
     }
 }

@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 300
   maxMovementSpeed: 10
+  ariseSpeed: 800
   leafViewPrefab: {fileID: 5373934858511267131, guid: ef2ecd1bab0f9124781aa3bf06445951, type: 3}
   leafRigidbody: {fileID: 5054368347130097460}
   bounceObject: {fileID: 8869913514994448466}
