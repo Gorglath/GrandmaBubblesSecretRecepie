@@ -16,6 +16,13 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     private GameObject view;
     private PossessableGenerator availableGenerator;
     private PlayerController playerController;
+    public void OnActionDown()
+    {
+    }
+
+    public void OnActionUp()
+    {
+    }
 
     public void SetPosition(Vector3 position)
     {

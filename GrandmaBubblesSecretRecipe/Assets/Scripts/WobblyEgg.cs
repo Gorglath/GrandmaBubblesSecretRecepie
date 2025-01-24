@@ -19,7 +19,13 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
     private GameObject view;
     private PlayerController playerController;
+    public void OnActionDown()
+    {
+    }
 
+    public void OnActionUp()
+    {
+    }
     public void OnAction()
     {}
 

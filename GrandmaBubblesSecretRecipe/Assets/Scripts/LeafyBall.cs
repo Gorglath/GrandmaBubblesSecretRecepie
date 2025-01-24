@@ -19,6 +19,13 @@ public class LeafyBall : MonoBehaviour, IPossesable
 
     private GameObject view;
     private bool isActive;
+    public void OnActionDown()
+    {
+    }
+
+    public void OnActionUp()
+    {
+    }
 
     public void OnAction()
     {

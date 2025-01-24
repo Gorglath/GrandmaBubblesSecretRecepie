@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Net;
 using UnityEngine;
@@ -15,6 +16,12 @@ public class Stick : MonoBehaviour, IPossesable
     private float ariseSpeed;
 
     [SerializeField]
+    private float ariseRetractSpeed;
+
+    [SerializeField]
+    private float maxAriseScale;
+
+    [SerializeField]
     private GameObject stickViewPrefab;
 
     [SerializeField]
@@ -22,23 +29,23 @@ public class Stick : MonoBehaviour, IPossesable
 
     private GameObject view;
     private bool isActive;
+    private float initialYScale;
+    public void OnActionDown()
+    {
+        isActive = true;
+    }
+
+    public void OnActionUp()
+    {
+        isActive = false;
+    }
 
     public void OnAction()
     {
-        if (stickRigidbody.linearVelocityY > 0.05f || stickRigidbody.linearVelocityY < -0.05f)
-        {
-            return;
-        }
-
-        isActive = !isActive;
     }
 
     public void OnMove(Vector2 moveDirection)
     {
-        if (moveDirection != Vector2.zero)
-        {
-            isActive = false;
-        }
         TorqueInDirection(moveDirection);
     }
 
@@ -54,6 +61,7 @@ public class Stick : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(stickViewPrefab, transform);
+        initialYScale = view.transform.localScale.y;
     }
 
     public void OnDeath()
@@ -73,32 +81,21 @@ public class Stick : MonoBehaviour, IPossesable
         return transform.position + new Vector3(velocity.x, velocity.y, 0) * Time.deltaTime * 5;
     }
 
-    private void Update()
+    public void Update()
     {
-        if (!isActive)
-        {
-            return;
-        }
-
         Arise();
     }
 
     public void Arise()
     {
-        var maxAngle = 1f;
-        var lookDirection = stickRigidbody.transform.up;
-        var cross = Vector3.Cross(Vector2.up, lookDirection);
-        var sign = Mathf.Sign(cross.z);
-
-        var angle = Vector2.Angle(Vector2.up, lookDirection);
-
-        angle *= sign;
-
-        var absAngle = Mathf.Abs(angle);
-
-        if (absAngle > maxAngle) 
+        var scale = view.transform.localScale;
+        if ((isActive && scale.y >= maxAriseScale) || (!isActive && scale.y <= initialYScale))
         {
-            stickRigidbody.AddTorque(-sign * Time.deltaTime * ariseSpeed);
+            return;
         }
+
+        var riseDirection = isActive ? ariseSpeed : ariseRetractSpeed;
+        scale.y += riseDirection * Time.deltaTime;
+        view.transform.localScale = scale;
     }
 }

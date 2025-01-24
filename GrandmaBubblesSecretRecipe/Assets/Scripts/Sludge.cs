@@ -77,4 +77,12 @@ public class Sludge : MonoBehaviour, IPossesable
             attachedToWall = false;
         }
     }
+
+    public void OnActionDown()
+    {
+    }
+
+    public void OnActionUp()
+    {
+    }
 }

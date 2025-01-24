@@ -25,6 +25,21 @@ public class PlayerController : MonoBehaviour
 
         killSelfAction.started += OnKillSelfStart;
         killSelfAction.canceled += OnKillSelfEnd;
+
+        var inputAction = playerInput.actions["InputAction"];
+
+        inputAction.started += OnInputActionDown;
+        inputAction.canceled += OnInputActionUp;
+    }
+
+    private void OnInputActionDown(InputAction.CallbackContext context)
+    {
+        activePossesable.OnActionDown();
+    }
+
+    private void OnInputActionUp(InputAction.CallbackContext context)
+    {
+        activePossesable.OnActionUp();
     }
 
     private void OnKillSelfEnd(InputAction.CallbackContext context)
