@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TentacleSmaller
+  m_Name: TentacleSmaller 1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -327,7 +327,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 6470213457376482724, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
+      value: {fileID: -3768602256033949613, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
     - time: 0.06666667
       value: {fileID: -6023739703770260487, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
     - time: 0.13333334
@@ -441,7 +441,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 6470213457376482724, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
+    - {fileID: -3768602256033949613, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
     - {fileID: -6023739703770260487, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
     - {fileID: -4666834262759175280, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
     - {fileID: 1677298271768654984, guid: 9c937195b214347b2a7e044d3927533e, type: 3}
