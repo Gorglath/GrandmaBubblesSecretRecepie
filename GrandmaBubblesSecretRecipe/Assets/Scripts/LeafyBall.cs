@@ -14,21 +14,38 @@ public class LeafyBall : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D leafRigidbody;
 
+    [SerializeField]
+    private GameObject bounceObject;
+
     private GameObject view;
+    private bool isActive;
 
     public void OnAction()
     {
-        //TODO : implement.
+        if(leafRigidbody.linearVelocityY > 0.05f || leafRigidbody.linearVelocityY < -0.05f)
+        {
+            return;
+        }
+
+        isActive = !isActive;
+        leafRigidbody.linearVelocity = Vector2.zero;
+        leafRigidbody.constraints = isActive ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
+        bounceObject.SetActive(isActive);
+        view.SetActive(!isActive);
     }
 
     public void OnMove(Vector2 moveDirection)
     {
+        if (isActive)
+        {
+            return;
+        }
+
         var currentSpeed = leafRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
         var actualForce = moveStep * (1 - currentSpeed / maxMovementSpeed);
         leafRigidbody.AddForce(actualForce);
-        Debug.Log(actualForce);
     }
 
     public void OnPossessed(PlayerController playerController)
