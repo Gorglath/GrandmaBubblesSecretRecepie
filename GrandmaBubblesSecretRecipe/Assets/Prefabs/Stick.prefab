@@ -74,8 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 815
   maxMovementSpeed: 10
-  ariseSpeed: 3
-  ariseRetractSpeed: -3
-  maxAriseScale: 4
+  maxJumpDuration: 2
+  maxJumpScale: 1.2
   stickViewPrefab: {fileID: 8253013222417206905, guid: c1eaeab0b883732419273b5c6a9a1c98, type: 3}
   stickRigidbody: {fileID: 5054368347130097460}
+  jumpForceMinMax: {x: 2, y: 6}

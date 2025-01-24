@@ -13,13 +13,10 @@ public class Stick : MonoBehaviour, IPossesable
     private float maxMovementSpeed;
 
     [SerializeField]
-    private float ariseSpeed;
+    private float maxJumpDuration;
 
     [SerializeField]
-    private float ariseRetractSpeed;
-
-    [SerializeField]
-    private float maxAriseScale;
+    private float maxJumpScale;
 
     [SerializeField]
     private GameObject stickViewPrefab;
@@ -27,17 +24,30 @@ public class Stick : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D stickRigidbody;
 
+    [SerializeField]
+    private Vector2 jumpForceMinMax;
+
     private GameObject view;
     private bool isActive;
     private float initialYScale;
+    private float holdDuration;
+
     public void OnActionDown()
     {
         isActive = true;
+        holdDuration = 0;
     }
 
     public void OnActionUp()
     {
         isActive = false;
+        var scale = view.transform.localScale;
+        scale.y = initialYScale;
+        view.transform.localScale = scale;
+
+        var forceDirection = stickRigidbody.transform.up;
+        var forceAmount = Mathf.Lerp(jumpForceMinMax.x, jumpForceMinMax.y, holdDuration / maxJumpDuration);
+        stickRigidbody.AddForce(forceDirection * forceAmount, ForceMode2D.Impulse);
     }
 
     public void OnAction()
@@ -88,14 +98,18 @@ public class Stick : MonoBehaviour, IPossesable
 
     public void Arise()
     {
-        var scale = view.transform.localScale;
-        if ((isActive && scale.y >= maxAriseScale) || (!isActive && scale.y <= initialYScale))
+        if (!isActive)
         {
             return;
         }
+        var scale = view.transform.localScale;
+        if (holdDuration/maxJumpDuration >= 1.0f)
+        {
+            return;
+        }
+        holdDuration += Time.deltaTime;
 
-        var riseDirection = isActive ? ariseSpeed : ariseRetractSpeed;
-        scale.y += riseDirection * Time.deltaTime;
+        scale.y = Mathf.Lerp(initialYScale, maxJumpScale, holdDuration / maxJumpDuration);
         view.transform.localScale = scale;
     }
 }
