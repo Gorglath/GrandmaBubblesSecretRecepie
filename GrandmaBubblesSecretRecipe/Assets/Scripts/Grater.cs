@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Grater : MonoBehaviour
 {
+    [SerializeField]
+    private float grateAmountPerMove;
+
     private List<GrateState> availablePlayers = new List<GrateState>();
     private List<Vector3> previousLocations = new List<Vector3>();
     private void Update()
@@ -10,7 +13,22 @@ public class Grater : MonoBehaviour
         for (var i = 0; i < previousLocations.Count; i++)
         {
             var previousLocation = previousLocations[i];
-            var currentLocation = 
+            var currentLocation = availablePlayers[i].transform.position;
+            var moved = previousLocation != currentLocation;
+            if (moved)
+            {
+                availablePlayers[i].grateValue += grateAmountPerMove * Time.deltaTime;
+                if (availablePlayers[i].grateValue > 1.0f)
+                {
+                    var playerController = availablePlayers[i].GetComponentInParent<PlayerController>();
+                    Debug.Log(availablePlayers[i].grateValue);
+                    previousLocations.RemoveAt(i);
+                    availablePlayers.RemoveAt(i);
+                    playerController.Die(true);
+                }
+            }
+
+            previousLocations[i] = currentLocation;
         }
     }
 
@@ -22,9 +40,11 @@ public class Grater : MonoBehaviour
             {
                 var state = collision.attachedRigidbody.gameObject.AddComponent<GrateState>();
                 availablePlayers.Add(state);
+                previousLocations.Add(state.transform.position);
             } else
             {
                 availablePlayers.Add(exisitingState);
+                previousLocations.Add(exisitingState.transform.position);
             }
         }
     }
@@ -34,7 +54,9 @@ public class Grater : MonoBehaviour
         {
             if (collision.attachedRigidbody.TryGetComponent<GrateState>(out var exisitingState))
             {
+                var locationIndex = availablePlayers.IndexOf(exisitingState);
                 availablePlayers.Remove(exisitingState);
+                previousLocations.RemoveAt(locationIndex);
             }
         }
     }
