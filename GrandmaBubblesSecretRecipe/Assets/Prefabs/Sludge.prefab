@@ -44,10 +44,10 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 2
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19710a307b0d39448462a88a9eca325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 200
+  movementSpeed: 600
   maxMovementSpeed: 10
-  jumpForce: 5
+  jumpForce: 7
   sludgeMainViewPrefab: {fileID: 5373934858511267131, guid: c96492b5fc2a7ad40a6a6a9064b6a0e4, type: 3}
   sludgeRigidbody: {fileID: 5054368347130097460}

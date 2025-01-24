@@ -22,6 +22,7 @@ public class Sludge : MonoBehaviour, IPossesable
     private bool attachedToWall;
     private bool grounded;
 
+    private Animator viewAnimator;
     public IngredientType IngerdientType => IngredientType.Slugde;
     public void OnAction()
     {
@@ -33,8 +34,8 @@ public class Sludge : MonoBehaviour, IPossesable
         grounded = false;
         // find closest location.
         var sludgePosition = sludgeRigidbody.position;
-        var leftRay = Physics2D.RaycastAll(sludgePosition, sludgePosition + Vector2.left, 0.8f);
-        var rightRay = Physics2D.RaycastAll(sludgePosition, sludgePosition + Vector2.right, 0.8f);
+        var leftRay = Physics2D.RaycastAll(sludgePosition, sludgePosition + Vector2.left, 1f);
+        var rightRay = Physics2D.RaycastAll(sludgePosition, sludgePosition + Vector2.right, 1f);
         var jumpDirection = Vector2.up;
         if (leftRay.Any(r => r.transform.CompareTag("ClimbableWall")))
         {
@@ -45,6 +46,7 @@ public class Sludge : MonoBehaviour, IPossesable
         }
 
         sludgeRigidbody.AddForce(jumpDirection.normalized * jumpForce, ForceMode2D.Impulse);
+        viewAnimator.SetTrigger("Mouse down");
     }
 
     public void OnMove(Vector2 moveDirection)
@@ -69,6 +71,7 @@ public class Sludge : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         mainView = Instantiate(sludgeMainViewPrefab, transform);
+        viewAnimator = mainView.GetComponent<Animator>();
     }
 
     public void OnDeath()
