@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BubblePossesable : MonoBehaviour, IPossesable
 {
@@ -55,5 +56,16 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     internal void RegisterController(PlayerController playerController)
     {
         this.playerController = playerController;
+    }
+
+    public Vector3 GetCenterPosition()
+    {
+        return view.transform.position;
+    }
+
+    public Vector3 GetPredictedPosition(Vector2 moveDirection)
+    {
+        var moveStep = moveDirection * movementSpeed * Time.deltaTime;
+        return transform.position + new Vector3(moveStep.x, moveStep.y, 0);
     }
 }

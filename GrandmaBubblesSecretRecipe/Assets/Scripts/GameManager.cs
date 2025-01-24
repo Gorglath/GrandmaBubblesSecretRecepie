@@ -8,35 +8,40 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerInputManager playerInputManager;
 
+    [SerializeField]
+    private CameraManager cameraManager;
+
     private int numberOfPlayers;
     private void OnEnable()
     {
+        numberOfPlayers = 0;
         playerInputManager.onPlayerJoined += PlayerJoined;
         playerInputManager.onPlayerLeft += PlayerLeft;
-        numberOfPlayers = 0;
     }
 
     private void PlayerLeft(PlayerInput input)
     {
-        Debug.Log("PlayerLeft");
         // Remove player controller.
         if (numberOfPlayers == 0)
         {
             return;
         }
         numberOfPlayers--;
+        var controller = input.GetComponent<PlayerController>();
+        cameraManager.DeregisterPlayer(controller);
     }
 
     private void PlayerJoined(PlayerInput input)
     {
-        Debug.Log("PlayerJoined");
-        if(numberOfPlayers >= playerInputManager.maxPlayerCount)
+        if(numberOfPlayers >= PlayerInputManager.instance.maxPlayerCount)
         {
             return;
         }
 
         // Add player controller with the given input.
         numberOfPlayers++;
+        var controller = input.GetComponent<PlayerController>();
+        cameraManager.RegisterPlayer(controller);
     }
 
     private void OnDisable()
@@ -44,5 +49,4 @@ public class GameManager : MonoBehaviour
         playerInputManager.onPlayerJoined -= PlayerJoined;
         playerInputManager.onPlayerLeft -= PlayerLeft;
     }
-
 }
