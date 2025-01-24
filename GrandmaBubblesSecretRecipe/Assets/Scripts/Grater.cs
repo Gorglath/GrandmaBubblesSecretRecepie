@@ -25,6 +25,7 @@ public class Grater : MonoBehaviour
                     previousLocations.RemoveAt(i);
                     availablePlayers.RemoveAt(i);
                     playerController.Die(true);
+                    return;
                 }
             }
 
@@ -54,9 +55,12 @@ public class Grater : MonoBehaviour
         {
             if (collision.attachedRigidbody.TryGetComponent<GrateState>(out var exisitingState))
             {
-                var locationIndex = availablePlayers.IndexOf(exisitingState);
-                availablePlayers.Remove(exisitingState);
-                previousLocations.RemoveAt(locationIndex);
+                if (availablePlayers.Contains(exisitingState))
+                {
+                    var locationIndex = availablePlayers.IndexOf(exisitingState);
+                    availablePlayers.Remove(exisitingState);
+                    previousLocations.RemoveAt(locationIndex);
+                }
             }
         }
     }
