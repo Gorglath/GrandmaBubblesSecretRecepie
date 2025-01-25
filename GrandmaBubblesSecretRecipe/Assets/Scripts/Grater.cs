@@ -16,6 +16,13 @@ public class Grater : MonoBehaviour
         for (var i = 0; i < previousLocations.Count; i++)
         {
             var previousLocation = previousLocations[i];
+            if (availablePlayers[i] == null)
+            {
+                availablePlayers.RemoveAt(i);
+                previousLocations.RemoveAt(i);
+                i--;
+                continue;
+            }
             var currentLocation = availablePlayers[i].transform.position;
             var moved = previousLocation != currentLocation;
             if (moved)

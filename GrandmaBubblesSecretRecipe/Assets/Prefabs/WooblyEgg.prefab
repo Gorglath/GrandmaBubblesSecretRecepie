@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baada01a4fdc3314cbfc51b8dd3fe664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
+  movementSpeed: 150
   maxMovementSpeed: 10
-  breakMovementSpeed: 6
+  breakMovementSpeed: 5.5
   jumpForce: 4
   eggViewPrefab: {fileID: 4792468493930219614, guid: e72b26eb2484115488f82bf439cceaba, type: 3}
   eggRigidbody: {fileID: 5716662519356371558}
+  eggBreakVFX: {fileID: 4792468493930219614, guid: 93f134e9f13e748a8b2c31aa2bfd2d76, type: 3}
 --- !u!50 &5716662519356371558
 Rigidbody2D:
   serializedVersion: 5

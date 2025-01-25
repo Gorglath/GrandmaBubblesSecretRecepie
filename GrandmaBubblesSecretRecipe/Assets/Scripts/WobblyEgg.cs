@@ -20,6 +20,9 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D eggRigidbody;
 
+    [SerializeField]
+    private GameObject eggBreakVFX;
+
     private GameObject view;
     private PlayerController playerController;
     private bool grounded;
@@ -103,6 +106,8 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
         if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)
         {
+            var eggVFX = Instantiate(eggBreakVFX, eggRigidbody.position, eggRigidbody.transform.rotation);
+            Destroy(eggVFX, 5.0f);
             playerController.Die();
         }
     }
