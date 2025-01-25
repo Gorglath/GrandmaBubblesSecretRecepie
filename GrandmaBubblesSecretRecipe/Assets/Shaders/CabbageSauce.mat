@@ -65,7 +65,7 @@ Material:
     - _SaucedMask_Add: 0
     - _SaucedMask_Multiply: 1
     - _isHighlighted: 0
-    - _isSauced: 1
+    - _isSauced: 0
     m_Colors:
     - _Highlight_Color: {r: 0.504591, g: 1, b: 0, a: 1}
     - _SauceMask_TilingOffset: {r: 0.23, g: 0.45, b: 0.54, a: 0.21}
