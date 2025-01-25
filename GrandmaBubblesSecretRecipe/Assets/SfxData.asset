@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b4d44d28eacc644af587c533a42a8c, type: 3}
+  m_Name: SfxData
+  m_EditorClassIdentifier: 
+  MainMusic:
+    volume: 0.8
+    audioClip: {fileID: 8300000, guid: a239496c1bd2f854d961db7110e1984c, type: 3}
+  Ingredients:
+    Chicken:
+      Jump:
+        volume: 0
+        audioClip: {fileID: 0}
+    Egg:
+      Run:
+        volume: 0
+        audioClip: {fileID: 0}
+      Jump:
+        volume: 0
+        audioClip: {fileID: 0}
+      Break: []
+    Sludge:
+      Move:
+        volume: 0
+        audioClip: {fileID: 0}
+      Jump:
+        volume: 0
+        audioClip: {fileID: 0}
+    Tentacle:
+      Move:
+        volume: 0
+        audioClip: {fileID: 0}
+      Jump:
+        volume: 0
+        audioClip: {fileID: 0}
+    Cabbage:
+      Move:
+        volume: 0
+        audioClip: {fileID: 0}
+      Jump:
+        volume: 0
+        audioClip: {fileID: 0}
+      Hit:
+        volume: 0
+        audioClip: {fileID: 0}
+    Cheese:
+      Move:
+        volume: 0
+        audioClip: {fileID: 0}
+    Jelly:
+      Move:
+        volume: 0
+        audioClip: {fileID: 0}
+      Hit:
+        volume: 0
+        audioClip: {fileID: 0}
+  Posses:
+    volume: 0
+    audioClip: {fileID: 0}
+  KictchenUtils:
+    Pot: []
+    HotPot:
+      Cooking:
+        volume: 0
+        audioClip: {fileID: 0}
+    Slicer:
+      Slice:
+        volume: 0
+        audioClip: {fileID: 0}
+    Grater:
+      Grating:
+        volume: 0
+        audioClip: {fileID: 0}
+    Saucer:
+      Sauce:
+        volume: 0
+        audioClip: {fileID: 0}
+    RecipeBook:
+      ItemCompleted:
+        volume: 0
+        audioClip: {fileID: 0}
