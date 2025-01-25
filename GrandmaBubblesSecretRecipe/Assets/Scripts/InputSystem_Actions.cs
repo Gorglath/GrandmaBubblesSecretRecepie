@@ -53,6 +53,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FinishGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2152ebf-19d4-43ef-ab4e-0fb523247055"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -86,6 +95,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""KillSelf"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82560ba9-fc8b-4037-b3d7-9a1d131f34d9"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FinishGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -159,6 +179,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_InputAction = m_Player.FindAction("InputAction", throwIfNotFound: true);
         m_Player_KillSelf = m_Player.FindAction("KillSelf", throwIfNotFound: true);
+        m_Player_FinishGame = m_Player.FindAction("FinishGame", throwIfNotFound: true);
         // MenuPlayer
         m_MenuPlayer = asset.FindActionMap("MenuPlayer", throwIfNotFound: true);
         m_MenuPlayer_StartGame = m_MenuPlayer.FindAction("StartGame", throwIfNotFound: true);
@@ -233,6 +254,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_InputAction;
     private readonly InputAction m_Player_KillSelf;
+    private readonly InputAction m_Player_FinishGame;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -240,6 +262,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @InputAction => m_Wrapper.m_Player_InputAction;
         public InputAction @KillSelf => m_Wrapper.m_Player_KillSelf;
+        public InputAction @FinishGame => m_Wrapper.m_Player_FinishGame;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +281,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @KillSelf.started += instance.OnKillSelf;
             @KillSelf.performed += instance.OnKillSelf;
             @KillSelf.canceled += instance.OnKillSelf;
+            @FinishGame.started += instance.OnFinishGame;
+            @FinishGame.performed += instance.OnFinishGame;
+            @FinishGame.canceled += instance.OnFinishGame;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -271,6 +297,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @KillSelf.started -= instance.OnKillSelf;
             @KillSelf.performed -= instance.OnKillSelf;
             @KillSelf.canceled -= instance.OnKillSelf;
+            @FinishGame.started -= instance.OnFinishGame;
+            @FinishGame.performed -= instance.OnFinishGame;
+            @FinishGame.canceled -= instance.OnFinishGame;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -356,6 +385,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnInputAction(InputAction.CallbackContext context);
         void OnKillSelf(InputAction.CallbackContext context);
+        void OnFinishGame(InputAction.CallbackContext context);
     }
     public interface IMenuPlayerActions
     {

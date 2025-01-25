@@ -12,9 +12,10 @@ public class Recipe : ScriptableObject
 
     public List<IngredientListing> IngredientListings => ingredientListings;
 
-    public (bool complete, IngredientListing ingredientListing) UpdateListing(IPossesable ingredient)
+    public (bool complete, bool correct, IngredientListing ingredientListing) UpdateListing(IPossesable ingredient)
     {
         IngredientListing listing = new IngredientListing();
+        bool correct = false;
         foreach (var ingredientListing in ingredientListings)
         {
             if (ingredientListing.ingredientType != ingredient.IngerdientType)
@@ -53,6 +54,7 @@ public class Recipe : ScriptableObject
             }
 
             listing = ingredientListing;
+            correct = true;
         }
 
         if (ingredientListings.Contains(listing))
@@ -60,11 +62,11 @@ public class Recipe : ScriptableObject
             ingredientListings.Remove(listing);
             if(ingredientListings.Count == 0)
             {
-                return (true, listing);
+                return (true, correct, listing);
             }
         }
 
-        return (false, listing);
+        return (false, correct, listing);
     }
 }
 
