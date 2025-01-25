@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_SH_Sprite_Base
+  m_Name: StickSauce
   m_Shader: {fileID: -6465566751694194690, guid: 987b4a2bcffb6414f90182708dce525c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,8 +42,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SauceMask_Tex:
         m_Texture: {fileID: 2800000, guid: 7e1a81cb56f86954aa675b1c3e86f129, type: 3}
-        m_Scale: {x: 1, y: 1.2}
-        m_Offset: {x: 0, y: -0.33}
+        m_Scale: {x: 1.65, y: 1.29}
+        m_Offset: {x: 0.32, y: -0.76}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -59,13 +59,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _Highlight_Thickness: 0.47
-    - _SauceMask_Add: 0.49
-    - _SauceMask_Multiply: 8.96
+    - _SauceMask_Add: 0.25
+    - _SauceMask_Multiply: 7.21
     - _Sauce_Opacity: 1
     - _SaucedMask_Add: 0
     - _SaucedMask_Multiply: 1
     - _isHighlighted: 0
-    - _isSauced: 1
+    - _isSauced: 0
     m_Colors:
     - _Highlight_Color: {r: 0.504591, g: 1, b: 0, a: 1}
     - _Sauce_Color: {r: 0.77824503, g: 0.6127626, b: 0.9622642, a: 1}
