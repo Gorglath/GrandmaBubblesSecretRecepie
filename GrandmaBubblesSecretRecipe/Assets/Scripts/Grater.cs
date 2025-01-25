@@ -7,6 +7,18 @@ public class Grater : MonoBehaviour
     private GrateView grateView;
 
     [SerializeField]
+    private ParticleSystem grateParticleSystem;
+
+    [SerializeField]
+    private int smallIngredientParticleAmount;
+
+    [SerializeField]
+    private int mediumIngredientParticleAmount;
+
+    [SerializeField]
+    private int bigIngredientParticleAmount;
+
+    [SerializeField]
     private float grateAmountPerMove;
 
     private List<GrateState> availablePlayers = new List<GrateState>();
@@ -30,6 +42,7 @@ public class Grater : MonoBehaviour
             var moved = previousLocation != currentLocation;
             if (moved)
             {
+                grateParticleSystem.Emit(GetParticleCountByPlayer(i));
                 if (!gratingAudioSources[i].isPlaying)
                 {
                     gratingAudioSources[i].Play();
@@ -56,6 +69,55 @@ public class Grater : MonoBehaviour
             }
             previousLocations[i] = currentLocation;
         }
+    }
+
+    private int GetParticleCountByPlayer(int i)
+    {
+        var availablePlayer = availablePlayers[i];
+        var possesable = availablePlayer.GetComponent<IPossesable>();
+        var playerIngredientType = possesable.IngerdientType;
+        var particleAmount = 0;
+        var main = grateParticleSystem.main;
+        switch (playerIngredientType)
+        {
+            case IngredientType.None:
+            case IngredientType.Egg:
+                main.startColor = Color.blue;
+                particleAmount = smallIngredientParticleAmount;
+                break;
+            case IngredientType.Sludge:
+                main.startColor = Color.magenta;
+                particleAmount = smallIngredientParticleAmount;
+                break;
+            case IngredientType.Cabbage:
+                main.startColor = Color.green;
+                particleAmount = mediumIngredientParticleAmount;
+                break;
+            case IngredientType.Jelly:
+                main.startColor = Color.red;
+                particleAmount = mediumIngredientParticleAmount;
+                break;
+            case IngredientType.Cheese:
+                main.startColor = Color.yellow;
+                particleAmount = mediumIngredientParticleAmount;
+                break;
+            case IngredientType.Tentacle:
+                main.startColor = Color.green;
+                particleAmount = bigIngredientParticleAmount;
+                break;
+            case IngredientType.Chicken:
+                main.startColor = Color.magenta;
+                particleAmount = bigIngredientParticleAmount;
+                break;
+            case IngredientType.Flour:
+                main.startColor = Color.red;
+                particleAmount = bigIngredientParticleAmount;
+                break;
+            default:
+                return bigIngredientParticleAmount;
+        }
+
+        return particleAmount;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
