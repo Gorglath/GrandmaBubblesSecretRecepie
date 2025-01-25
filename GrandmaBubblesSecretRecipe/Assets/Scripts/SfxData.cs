@@ -24,27 +24,28 @@ public class SfxData : ScriptableObject
         public struct HotPotDef
         {
             public AudioDefinition Cooking;
+            public AudioDefinition Burned;
         }
         [Serializable]
         public struct GraterDef
         {
-            public AudioDefinition Grating;
+            public AudioDefinition[] Grating;
         }
         [Serializable]
         public struct SlicerDef
         {
-            public AudioDefinition Slice;
+            public AudioDefinition[] Slice;
         }
         [Serializable]
         public struct SaucerDef
         {
-            public AudioDefinition Sauce;
+            public AudioDefinition[] Sauce;
         }
         [Serializable]
         public struct RecipeBookDef
         {
             public AudioDefinition RecipeComplete;
-            public AudioDefinition ItemCompleted;
+            public AudioDefinition[] ItemCompleted;
         }
     }
     [Serializable]

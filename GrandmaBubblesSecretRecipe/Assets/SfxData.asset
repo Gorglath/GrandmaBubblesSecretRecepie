@@ -73,27 +73,54 @@ MonoBehaviour:
     volume: 0.8
     audioClip: {fileID: 8300000, guid: 8369f47dc19146943bba9b72508c8c25, type: 3}
   KictchenUtils:
-    Pot: []
+    Pot:
+    - volume: 0.8
+      audioClip: {fileID: 8300000, guid: f906f13a8a6aaec46a9833398e773be9, type: 3}
+    - volume: 0.8
+      audioClip: {fileID: 8300000, guid: 20f357fa0fcbd56479427fc27dc99d5c, type: 3}
+    - volume: 0.8
+      audioClip: {fileID: 8300000, guid: 16e0cfd8c8a096d439c9d1b91cb5af98, type: 3}
+    - volume: 0.8
+      audioClip: {fileID: 8300000, guid: 49b56718b922231449865ed449b9c5e5, type: 3}
     HotPot:
       Cooking:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.6
+        audioClip: {fileID: 8300000, guid: c4f42af99f43ad2469d2ce3497327b5c, type: 3}
+      Burned:
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: ae70ab43ad5a3aa478e8b03a4d0000ae, type: 3}
     Slicer:
       Slice:
-        volume: 0
-        audioClip: {fileID: 0}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: a3f7458a0bf91974c9fa8b6275e6c4a9, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 170d3a02366baad498e12363f3902359, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 64f5f85431d55394998e46f0dbef12e6, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 5d0d1bbe91e9f3e4ba81e17b955ade06, type: 3}
     Grater:
       Grating:
-        volume: 0
-        audioClip: {fileID: 0}
+      - volume: 0.6
+        audioClip: {fileID: 8300000, guid: 6b3c66a66353e8048a9655ab76248dbc, type: 3}
+      - volume: 0.6
+        audioClip: {fileID: 8300000, guid: bd99fb2094fc52041b6d7ba002effab9, type: 3}
+      - volume: 0.6
+        audioClip: {fileID: 8300000, guid: 5329a72c5b3a7dd4db99af7534122eb3, type: 3}
     Saucer:
       Sauce:
-        volume: 0
-        audioClip: {fileID: 0}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 32d3fdecf363f214196d7b73be37ed74, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: e9deddf785e3a21458dda28d857185dd, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 9c4ec1bc29db4914484506866415a86e, type: 3}
     RecipeBook:
       RecipeComplete:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.9
+        audioClip: {fileID: 8300000, guid: fa18f27cf9130f64f95abb05bd6cf791, type: 3}
       ItemCompleted:
-        volume: 0
-        audioClip: {fileID: 0}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 0e3010049d5c51d4092ea653cc8d9417, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: c5423683603b4de4db92d8cc037388bc, type: 3}
