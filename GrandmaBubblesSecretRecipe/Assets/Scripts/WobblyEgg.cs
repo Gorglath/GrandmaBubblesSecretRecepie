@@ -81,6 +81,11 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Kitchen"))
+        {
+            return;
+        }
+
         if (collision.CompareTag("Platform"))
         {
             grounded = true;

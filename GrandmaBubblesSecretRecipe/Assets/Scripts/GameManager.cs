@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private CameraManager cameraManager;
+
+    [SerializeField]
+    private RecipeBook recipeBook;
 
     [SerializeField]
     private Recipe[] recipes;
@@ -49,7 +53,9 @@ public class GameManager : MonoBehaviour
 
     public void DeliverIngredient(IPossesable ingredient)
     {
-        if (activeRecipe.UpdateListing(ingredient))
+        var recipeTopple = activeRecipe.UpdateListing(ingredient);
+        recipeBook.CrossBookEntry(recipeTopple.ingredientListing);
+        if (recipeTopple.complete)
         {
             completedRecipies++;
             if(completedRecipies >= numberOfRecipes)
@@ -71,7 +77,14 @@ public class GameManager : MonoBehaviour
             recipeIndex = activeRecipeIndex == 0 ? Random.Range(1, recipes.Length) : activeRecipeIndex - 1;
         }
         var recipe = recipes[recipeIndex];
-        activeRecipe = recipe;
+        if(activeRecipe != null)
+        {
+            Destroy(activeRecipe);
+        }
+
+        activeRecipe = Instantiate(recipe);
+
+        recipeBook.PopulateByRecipe(activeRecipe);
 
         var newRecipeEffect = Instantiate(newRecipeVFX);
         Destroy(newRecipeEffect, 5.0f);

@@ -10,30 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93458a56b26fa334b9de19d87124e368, type: 3}
-  m_Name: Recipe 6
+  m_Name: DebugRecipe
   m_EditorClassIdentifier: 
   ingredientListings:
-  - ingredientType: 4
+  - ingredientType: 1
     shouldBeCooked: 0
     shouldBeGrated: 0
     shouldBeSliced: 0
-    shouldBeSauced: 0
-    shouldBePowdered: 1
-  - ingredientType: 3
-    shouldBeCooked: 0
-    shouldBeGrated: 0
-    shouldBeSliced: 1
-    shouldBeSauced: 1
-    shouldBePowdered: 0
-  - ingredientType: 6
-    shouldBeCooked: 0
-    shouldBeGrated: 0
-    shouldBeSliced: 1
-    shouldBeSauced: 0
-    shouldBePowdered: 0
-  - ingredientType: 7
-    shouldBeCooked: 0
-    shouldBeGrated: 0
-    shouldBeSliced: 1
     shouldBeSauced: 0
     shouldBePowdered: 0

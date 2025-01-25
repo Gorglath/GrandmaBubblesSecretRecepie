@@ -53,7 +53,7 @@ public class MenuManager : MonoBehaviour
 
     private void StartGame(InputAction.CallbackContext context)
     {
-        if (startingGame || numberOfPlayers < 2)
+        if (startingGame)
         {
             return;
         }

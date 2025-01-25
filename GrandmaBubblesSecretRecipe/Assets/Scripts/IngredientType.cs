@@ -5,7 +5,7 @@ public enum IngredientType
     None,
     Egg,
     Cabbage,
-    Slugde,
+    Sludge,
     Jelly,
     Tentacle,
     Chicken,

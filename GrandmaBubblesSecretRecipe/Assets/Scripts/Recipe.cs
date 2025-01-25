@@ -10,7 +10,9 @@ public class Recipe : ScriptableObject
     [SerializeField]
     private List<IngredientListing> ingredientListings = new List<IngredientListing>();
 
-    public bool UpdateListing(IPossesable ingredient)
+    public List<IngredientListing> IngredientListings => ingredientListings;
+
+    public (bool complete, IngredientListing ingredientListing) UpdateListing(IPossesable ingredient)
     {
         IngredientListing listing = new IngredientListing();
         foreach (var ingredientListing in ingredientListings)
@@ -53,11 +55,11 @@ public class Recipe : ScriptableObject
             ingredientListings.Remove(listing);
             if(ingredientListings.Count == 0)
             {
-                return true;
+                return (true, listing);
             }
         }
 
-        return false;
+        return (false, listing);
     }
 }
 
@@ -70,4 +72,12 @@ public struct IngredientListing
     public bool shouldBeSliced;
     public bool shouldBeSauced;
     public bool shouldBePowdered;
+    public static bool operator ==(IngredientListing c1, IngredientListing c2)
+    {
+        return c1.Equals(c2);
+    }
+    public static bool operator !=(IngredientListing c1, IngredientListing c2)
+    {
+        return !c1.Equals(c2);
+    }
 }

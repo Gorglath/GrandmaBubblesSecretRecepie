@@ -23,7 +23,7 @@ public class Sludge : MonoBehaviour, IPossesable
     private bool grounded;
 
     private Animator viewAnimator;
-    public IngredientType IngerdientType => IngredientType.Slugde;
+    public IngredientType IngerdientType => IngredientType.Sludge;
     public void OnAction()
     {
         if (!grounded)
