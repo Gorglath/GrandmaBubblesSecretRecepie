@@ -42,36 +42,36 @@ MonoBehaviour:
         volume: 0.8
         audioClip: {fileID: 8300000, guid: bb8f42e751be11748a2abb5753e85354, type: 3}
     Tentacle:
-      Move:
-        volume: 0
-        audioClip: {fileID: 0}
+      Prepare:
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: 16c0562150668ce4c958ebd69a73806d, type: 3}
       Jump:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: 5c1216704615578479f5bacbb31ede98, type: 3}
     Cabbage:
       Move:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.6
+        audioClip: {fileID: 8300000, guid: c73d5bef152973447b963ad03c00ab7d, type: 3}
       Jump:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: 3631a0331f923f2498265eec8949275a, type: 3}
       Hit:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: 27459bab1722076449841a9d94be1e9d, type: 3}
     Cheese:
       Move:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.6
+        audioClip: {fileID: 8300000, guid: 874011ad402b326488441d70c35891b6, type: 3}
     Jelly:
       Move:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.6
+        audioClip: {fileID: 8300000, guid: b8a0fb66575fa5743a1bd16ed2b81871, type: 3}
       Hit:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: 690ca48e786fcc249bbbe5a9c677cad5, type: 3}
   Posses:
-    volume: 0
-    audioClip: {fileID: 0}
+    volume: 0.8
+    audioClip: {fileID: 8300000, guid: 8369f47dc19146943bba9b72508c8c25, type: 3}
   KictchenUtils:
     Pot: []
     HotPot:

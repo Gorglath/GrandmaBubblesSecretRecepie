@@ -79,7 +79,7 @@ public class SfxData : ScriptableObject
         [Serializable]
         public struct TentacleDef
         {
-            public AudioDefinition Move;
+            public AudioDefinition Prepare;
             public AudioDefinition Jump;
         }
         [Serializable]

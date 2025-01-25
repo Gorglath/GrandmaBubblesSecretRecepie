@@ -39,6 +39,8 @@ public class Stick : MonoBehaviour, IPossesable
         holdDuration = 0;
         viewAnimator.ResetTrigger("Mouse up");
         viewAnimator.SetTrigger("Mouse down");
+        var sfx = SfxService.Instance.SfxData.Ingredients.Tentacle.Prepare;
+        SfxService.Instance.PlayOneShoot(sfx);
     }
 
     public void OnActionUp()
@@ -49,6 +51,8 @@ public class Stick : MonoBehaviour, IPossesable
         var forceAmount = Mathf.Lerp(jumpForceMinMax.x, jumpForceMinMax.y, holdDuration / maxJumpDuration);
         stickRigidbody.AddForce(forceDirection * forceAmount, ForceMode2D.Impulse);
         viewAnimator.SetTrigger("Mouse up");
+        var sfx = SfxService.Instance.SfxData.Ingredients.Tentacle.Jump;
+        SfxService.Instance.PlayOneShoot(sfx);
     }
 
     public void OnAction()

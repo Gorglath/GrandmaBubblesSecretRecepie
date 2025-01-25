@@ -21,6 +21,7 @@ public class Cheese : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D CheeseRigidbody;
 
+    private AudioSource moveSource;
     private GameObject mainView;
     private bool isFacingRight;
     private bool isActive;
@@ -33,10 +34,23 @@ public class Cheese : MonoBehaviour, IPossesable
 
     public void OnMove(Vector2 moveDirection)
     {
-        if(moveDirection != Vector2.zero)
+
+        if (moveDirection == Vector2.zero)
+        {
+            if (moveSource.isPlaying)
+            {
+                moveSource.Stop();
+            }
+        }
+        else
         {
             isFacingRight = moveDirection.x > 0;
+            if (!moveSource.isPlaying)
+            {
+                moveSource.Play();
+            }
         }
+
         var currentSpeed = CheeseRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
@@ -47,12 +61,16 @@ public class Cheese : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         mainView = Instantiate(cheeseView, transform);
+        var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Move;
+        moveSource = SfxService.Instance.PrepareSound(sfx);
+        moveSource.loop = true;
     }
 
     public void OnDeath()
     {
         Destroy(mainView);
         Destroy(gameObject);
+        Destroy(moveSource.gameObject);
     }
 
     public Vector3 GetCenterPosition()

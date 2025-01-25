@@ -25,6 +25,7 @@ public class Jelly : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D jellyRigidbody;
 
+    private AudioSource moveSource;
     private Animator viewAnimator;
     private GameObject view;
     private bool isActive;
@@ -89,6 +90,21 @@ public class Jelly : MonoBehaviour, IPossesable
             return;
         }
 
+        if (moveDirection == Vector2.zero)
+        {
+            if (moveSource.isPlaying)
+            {
+                moveSource.Stop();
+            }
+        }
+        else
+        {
+            if (!moveSource.isPlaying)
+            {
+                moveSource.Play();
+            }
+        }
+
         var currentSpeed = jellyRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
@@ -100,12 +116,16 @@ public class Jelly : MonoBehaviour, IPossesable
     {
         view = Instantiate(jellyViewPrefab, transform);
         viewAnimator = view.GetComponent<Animator>();
+        var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Move;
+        moveSource = SfxService.Instance.PrepareSound(sfx);
+        moveSource.loop = true;
     }
 
     public void OnDeath()
     {
         Destroy(view);
         Destroy(gameObject);
+        Destroy(moveSource.gameObject);
     }
 
     public Vector3 GetCenterPosition()
@@ -142,5 +162,19 @@ public class Jelly : MonoBehaviour, IPossesable
     public bool isSliced()
     {
         return gameObject.TryGetComponent<Sliced>(out _);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.attachedRigidbody == null)
+        {
+            return;
+        }
+
+        if (collision.attachedRigidbody.CompareTag("Ingrediant"))
+        {
+            var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Hit;
+            SfxService.Instance.PlayOneShoot(sfx);
+        }
     }
 }

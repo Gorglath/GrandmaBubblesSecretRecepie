@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class LeafyBall : MonoBehaviour, IPossesable
@@ -23,6 +24,7 @@ public class LeafyBall : MonoBehaviour, IPossesable
     [SerializeField]
     private GameObject bounceObject;
 
+    private AudioSource moveSource;
     private Animator viewAnimator;
     private GameObject view;
     private bool isActive;
@@ -66,6 +68,21 @@ public class LeafyBall : MonoBehaviour, IPossesable
             return;
         }
 
+        if (moveDirection == Vector2.zero)
+        {
+            if (moveSource.isPlaying)
+            {
+                moveSource.Stop();
+            }
+        }
+        else
+        {
+            if (!moveSource.isPlaying)
+            {
+                moveSource.Play();
+            }
+        }
+
         var currentSpeed = leafRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
@@ -86,12 +103,16 @@ public class LeafyBall : MonoBehaviour, IPossesable
     {
         view = Instantiate(leafViewPrefab, transform);
         viewAnimator = view.GetComponent<Animator>();
+        var sfx = SfxService.Instance.SfxData.Ingredients.Cabbage.Move;
+        moveSource = SfxService.Instance.PrepareSound(sfx);
+        moveSource.loop = true;
     }
 
     public void OnDeath()
     {
         Destroy(view);
         Destroy(gameObject);
+        Destroy(moveSource.gameObject);
     }
 
     public Vector3 GetCenterPosition()
@@ -129,6 +150,8 @@ public class LeafyBall : MonoBehaviour, IPossesable
             leafRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             bounceObject.SetActive(isActive);
             viewAnimator.SetTrigger("Mouse down");
+            var sfx = SfxService.Instance.SfxData.Ingredients.Cabbage.Jump;
+            SfxService.Instance.PlayOneShoot(sfx);
         }
     }
 
@@ -144,6 +167,8 @@ public class LeafyBall : MonoBehaviour, IPossesable
             var collisionBounceDirection = collision.attachedRigidbody.position - leafRigidbody.position;
             var jumpForce = collision.attachedRigidbody.TryGetComponent<WobblyEgg>(out _) ? bounceForce * 0.3f : bounceForce; 
             collision.attachedRigidbody.AddForce(collisionBounceDirection.normalized * jumpForce, ForceMode2D.Impulse);
+            var sfx = SfxService.Instance.SfxData.Ingredients.Cabbage.Hit;
+            SfxService.Instance.PlayOneShoot(sfx);
         }
 
         viewAnimator.SetTrigger("Got Hit");
