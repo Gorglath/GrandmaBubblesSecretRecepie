@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7959746619318741021}
   - component: {fileID: 2925474161561864524}
   - component: {fileID: 5418936328492232257}
+  - component: {fileID: 8829930129004307096}
   m_Layer: 0
   m_Name: MenuPlayer
   m_TagString: Untagged
@@ -118,3 +119,22 @@ MonoBehaviour:
   m_DefaultActionMap: MenuPlayer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8829930129004307096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442538838613303040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89404268c17d5c14d817c0469631d1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5418936328492232257}
+  bubbleSprites:
+  - {fileID: 2320471858156253709, guid: 0409a61414adeec498b9cd5e913e4a56, type: 3}
+  - {fileID: 6013771956779808566, guid: 202026e3045a84a4cb139828d3b3aea4, type: 3}
+  - {fileID: -7386905519220544938, guid: dfff4414f42e28f489b49e388d3ef353, type: 3}
+  - {fileID: -3138096119553543359, guid: c9c0b258dd492b441bf6b3f53dc19080, type: 3}
+  spriteRenderer: {fileID: 2925474161561864524}

@@ -13,6 +13,9 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D bubbleRigidbody;
 
+    [SerializeField]
+    private Sprite[] bubbleSprites;
+
     private GameObject view;
     private PossessableGenerator availableGenerator;
     private PlayerController playerController;
@@ -48,6 +51,8 @@ public class BubblePossesable : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(bubbleViewPrefab, transform);
+        var spriteRenderer = view.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sprite = bubbleSprites[playerController.GetPlayerIndex()];
     }
 
     public void OnDeath()

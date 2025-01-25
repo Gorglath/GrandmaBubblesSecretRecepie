@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private BubblePossesable defaultPossesable;
 
     [SerializeField]
+    private PlayerInput playerInput;
+
+    [SerializeField]
     private float killSelfHoldTime;
 
     IPossesable activePossesable;
@@ -16,6 +19,11 @@ public class PlayerController : MonoBehaviour
     private CameraManager cameraManager;
     private DateTime startedKillingTime;
     private GameManager gameManager;
+
+    public int GetPlayerIndex()
+    {
+        return playerInput.playerIndex;
+    }
 
     private void OnEnable()
     {
