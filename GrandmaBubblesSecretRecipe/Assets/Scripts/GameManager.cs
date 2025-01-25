@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,15 +31,19 @@ public class GameManager : MonoBehaviour
     private GameEndEffect gameOverVFX;
 
     private DateTime startTime;
+    private int errors;
     private Recipe activeRecipe;
     private int activeRecipeIndex;
     private int completedRecipies;
+    private bool gameIsOver;
 
     public void StartGame((int, InputDevice)[] playerIndices)
     {
         foreach (var playerIndex in playerIndices)
         {
             var player = playerInputManager.JoinPlayer(playerIndex.Item1, pairWithDevice: playerIndex.Item2);
+            var finishGameAction = player.actions["FinishGame"];
+            finishGameAction.started += TryFinishGame;
             PlayerJoined(player);
         }
 
@@ -57,6 +62,11 @@ public class GameManager : MonoBehaviour
     public void DeliverIngredient(IPossesable ingredient)
     {
         var recipeTopple = activeRecipe.UpdateListing(ingredient);
+        if (!recipeTopple.correct)
+        {
+            errors++;
+        }
+
         recipeBook.CrossBookEntry(recipeTopple.ingredientListing);
         if (recipeTopple.complete)
         {
@@ -67,12 +77,25 @@ public class GameManager : MonoBehaviour
             {
                 // Finish game.
                 var gameOverEffect = Instantiate(gameOverVFX);
-                gameOverEffect.Set(DateTime.Now - startTime);
+                gameOverEffect.Set(DateTime.Now - startTime, errors);
+                this.gameIsOver = true;
                 return;
             }
 
             ChooseRandomRecipe();
         }
+    }
+
+
+    private void TryFinishGame(InputAction.CallbackContext context)
+    {
+        if (!gameIsOver)
+        {
+            return;
+        }
+
+        gameIsOver = false;
+        SceneManager.LoadScene(0);
     }
 
     public void ChooseRandomRecipe()
