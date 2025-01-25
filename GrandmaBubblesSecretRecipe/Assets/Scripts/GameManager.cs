@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,8 +27,9 @@ public class GameManager : MonoBehaviour
     private GameObject newRecipeVFX;
     
     [SerializeField]
-    private GameObject gameOverVFX;
+    private GameEndEffect gameOverVFX;
 
+    private DateTime startTime;
     private Recipe activeRecipe;
     private int activeRecipeIndex;
     private int completedRecipies;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
 
         ChooseRandomRecipe();
+        startTime = DateTime.Now;
     }
 
     private void PlayerJoined(PlayerInput input)
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
             {
                 // Finish game.
                 var gameOverEffect = Instantiate(gameOverVFX);
+                gameOverEffect.Set(DateTime.Now - startTime);
                 return;
             }
 
@@ -73,10 +77,10 @@ public class GameManager : MonoBehaviour
 
     public void ChooseRandomRecipe()
     {
-        var recipeIndex = Random.Range(0, recipes.Length);
+        var recipeIndex = UnityEngine.Random.Range(0, recipes.Length);
         if(recipeIndex == activeRecipeIndex)
         {
-            recipeIndex = activeRecipeIndex == 0 ? Random.Range(1, recipes.Length) : activeRecipeIndex - 1;
+            recipeIndex = activeRecipeIndex == 0 ? UnityEngine.Random.Range(1, recipes.Length) : activeRecipeIndex - 1;
         }
         var recipe = recipes[recipeIndex];
         if(activeRecipe != null)
