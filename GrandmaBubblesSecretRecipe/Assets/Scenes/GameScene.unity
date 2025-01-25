@@ -6816,7 +6816,7 @@ Transform:
   m_GameObject: {fileID: 414604687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.899683, y: -7.077406, z: -8.363917}
+  m_LocalPosition: {x: -0.39808464, y: -0.94805, z: -13.492078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10389,7 +10389,7 @@ Transform:
   m_GameObject: {fileID: 1339130563}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.899683, y: -7.077406, z: -8.363917}
+  m_LocalPosition: {x: -0.39808464, y: -0.94805, z: -13.492078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11528,12 +11528,15 @@ MonoBehaviour:
   cameraManager: {fileID: 414604689}
   recipeBook: {fileID: 1803330623}
   recipes:
-  - {fileID: 11400000, guid: f8c1b21da1fad804ca730fa426ae16d6, type: 2}
-  - {fileID: 11400000, guid: f8c1b21da1fad804ca730fa426ae16d6, type: 2}
-  - {fileID: 11400000, guid: f8c1b21da1fad804ca730fa426ae16d6, type: 2}
+  - {fileID: 11400000, guid: 2017f7fbdc1ec314ea4741a4c9f8c284, type: 2}
+  - {fileID: 11400000, guid: 79c1abd83a93bdc41bf396ce56e052ef, type: 2}
+  - {fileID: 11400000, guid: 2ed773b69ed840545a9cf3e37a2533c6, type: 2}
+  - {fileID: 11400000, guid: 7276e8ba603f4b54195b8e8335b4fc2b, type: 2}
+  - {fileID: 11400000, guid: 25ba37c0c6ac7e748b09326f944ce290, type: 2}
+  - {fileID: 11400000, guid: e325b5203b1bbfa43a3578f4a8fc818b, type: 2}
   numberOfRecipes: 3
   newRecipeVFX: {fileID: 7067492024985820986, guid: 2f16ee78f526e654db9668e032706360, type: 3}
-  gameOverVFX: {fileID: 0}
+  gameOverVFX: {fileID: 8290852483385060474, guid: 1d84596b3ae040a46ad716fffa005332, type: 3}
 --- !u!1 &1781184774
 GameObject:
   m_ObjectHideFlags: 0
