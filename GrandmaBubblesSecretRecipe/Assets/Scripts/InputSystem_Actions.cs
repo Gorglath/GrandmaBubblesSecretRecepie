@@ -103,6 +103,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Bubble"",
+                    ""type"": ""Button"",
+                    ""id"": ""29428d91-bb1e-44a9-8bbe-85bbfcc778fe"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -114,6 +123,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b806f978-65ec-4dd7-bcae-e75a8f0f078f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bubble"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -142,6 +162,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // MenuPlayer
         m_MenuPlayer = asset.FindActionMap("MenuPlayer", throwIfNotFound: true);
         m_MenuPlayer_StartGame = m_MenuPlayer.FindAction("StartGame", throwIfNotFound: true);
+        m_MenuPlayer_Bubble = m_MenuPlayer.FindAction("Bubble", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -272,11 +293,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MenuPlayer;
     private List<IMenuPlayerActions> m_MenuPlayerActionsCallbackInterfaces = new List<IMenuPlayerActions>();
     private readonly InputAction m_MenuPlayer_StartGame;
+    private readonly InputAction m_MenuPlayer_Bubble;
     public struct MenuPlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
         public MenuPlayerActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @StartGame => m_Wrapper.m_MenuPlayer_StartGame;
+        public InputAction @Bubble => m_Wrapper.m_MenuPlayer_Bubble;
         public InputActionMap Get() { return m_Wrapper.m_MenuPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -289,6 +312,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @StartGame.started += instance.OnStartGame;
             @StartGame.performed += instance.OnStartGame;
             @StartGame.canceled += instance.OnStartGame;
+            @Bubble.started += instance.OnBubble;
+            @Bubble.performed += instance.OnBubble;
+            @Bubble.canceled += instance.OnBubble;
         }
 
         private void UnregisterCallbacks(IMenuPlayerActions instance)
@@ -296,6 +322,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @StartGame.started -= instance.OnStartGame;
             @StartGame.performed -= instance.OnStartGame;
             @StartGame.canceled -= instance.OnStartGame;
+            @Bubble.started -= instance.OnBubble;
+            @Bubble.performed -= instance.OnBubble;
+            @Bubble.canceled -= instance.OnBubble;
         }
 
         public void RemoveCallbacks(IMenuPlayerActions instance)
@@ -331,5 +360,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IMenuPlayerActions
     {
         void OnStartGame(InputAction.CallbackContext context);
+        void OnBubble(InputAction.CallbackContext context);
     }
 }

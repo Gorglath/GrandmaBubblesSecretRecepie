@@ -49,11 +49,10 @@ MonoBehaviour:
   bubbleViewPrefab: {fileID: 8234253421143656160, guid: dc011c8443dcfe74b980825015f45b76, type: 3}
   bubbleRigidbody: {fileID: 4502786750416362171}
   bubbleSprites:
-  - {fileID: 2320471858156253709, guid: 0409a61414adeec498b9cd5e913e4a56, type: 3}
-  - {fileID: 6013771956779808566, guid: 202026e3045a84a4cb139828d3b3aea4, type: 3}
   - {fileID: -7386905519220544938, guid: dfff4414f42e28f489b49e388d3ef353, type: 3}
   - {fileID: -3138096119553543359, guid: c9c0b258dd492b441bf6b3f53dc19080, type: 3}
-  spriteRenderer: {fileID: 0}
+  - {fileID: 2320471858156253709, guid: 0409a61414adeec498b9cd5e913e4a56, type: 3}
+  - {fileID: 6013771956779808566, guid: 202026e3045a84a4cb139828d3b3aea4, type: 3}
 --- !u!50 &4502786750416362171
 Rigidbody2D:
   serializedVersion: 5

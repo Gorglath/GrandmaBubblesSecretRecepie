@@ -9,7 +9,10 @@ public class MenuManager : MonoBehaviour
     private PlayerInputManager playerInputManager;
 
     [SerializeField]
-    private Transform[] playerContainers;
+    private SpriteRenderer[] playerContainers;
+
+    [SerializeField]
+    private GameObject startGameObject;
 
     private List<(int, InputDevice)> players = new List<(int, InputDevice)>();
     private int numberOfPlayers;
@@ -29,7 +32,12 @@ public class MenuManager : MonoBehaviour
             return;
         }
         numberOfPlayers--;
+        if(numberOfPlayers == 0)
+        {
+            startGameObject.SetActive(false);
+        }
         players.Remove((input.playerIndex, input.devices[0]));
+        playerContainers[input.playerIndex].enabled = true;
     }
 
     private void PlayerJoined(PlayerInput input)
@@ -43,12 +51,14 @@ public class MenuManager : MonoBehaviour
         {
             var startGameAction = input.actions["StartGame"];
             startGameAction.started += StartGame;
+            startGameObject.SetActive(true);
         }
 
         // Add player controller with the given input.
-        input.transform.position = playerContainers[numberOfPlayers].position;
+        input.transform.position = playerContainers[numberOfPlayers].transform.position;
         numberOfPlayers++;
         players.Add((input.playerIndex, input.devices[0]));
+        playerContainers[input.playerIndex].enabled = false;
     }
 
     private void StartGame(InputAction.CallbackContext context)
