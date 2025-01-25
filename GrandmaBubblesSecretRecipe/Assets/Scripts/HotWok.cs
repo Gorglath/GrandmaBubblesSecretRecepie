@@ -10,6 +10,7 @@ public class HotWok : MonoBehaviour
     private float cookAmountPerSecond;
 
     private List<Cooked> availablePlayers = new List<Cooked>();
+    private List<AudioSource> playerSources = new List<AudioSource>();
     private void Update()
     {
         for (var i = 0; i < availablePlayers.Count; i++)
@@ -19,7 +20,11 @@ public class HotWok : MonoBehaviour
             {
                 var playerController = availablePlayers[i].GetComponentInParent<PlayerController>();
                 availablePlayers.RemoveAt(i);
+                Destroy(playerSources[i].gameObject);
+                playerSources.RemoveAt(i);
                 playerController.Die(true);
+                var sfx = SfxService.Instance.SfxData.KictchenUtils.HotPot.Burned;
+                SfxService.Instance.PlayOneShoot(sfx);
                 return;
             }
         }
@@ -35,9 +40,18 @@ public class HotWok : MonoBehaviour
                 availablePlayers.Add(state);
                 var cookedDisplay = Instantiate(cookDisplayBar, collision.attachedRigidbody.transform.parent);
                 cookedDisplay.Bind(state);
+
+                var sfx = SfxService.Instance.SfxData.KictchenUtils.HotPot.Cooking;
+                var audioSource = SfxService.Instance.PrepareSound(sfx);
+                audioSource.loop = true;
+                playerSources.Add(audioSource);
             }
             else
             {
+                var sfx = SfxService.Instance.SfxData.KictchenUtils.HotPot.Cooking;
+                var audioSource = SfxService.Instance.PrepareSound(sfx);
+                audioSource.loop = true;
+                playerSources.Add(audioSource);
                 availablePlayers.Add(exisitingState);
             }
         }
@@ -50,7 +64,10 @@ public class HotWok : MonoBehaviour
             {
                 if (availablePlayers.Contains(exisitingState))
                 {
+                    var playerIndex = availablePlayers.IndexOf(exisitingState);
                     availablePlayers.Remove(exisitingState);
+                    Destroy(playerSources[playerIndex].gameObject);
+                    playerSources.RemoveAt(playerIndex);
                 }
             }
         }

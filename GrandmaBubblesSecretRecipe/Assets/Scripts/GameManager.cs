@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
         recipeBook.CrossBookEntry(recipeTopple.ingredientListing);
         if (recipeTopple.complete)
         {
+            var sfx = SfxService.Instance.SfxData.KictchenUtils.RecipeBook.RecipeComplete;
+            SfxService.Instance.PlayOneShoot(sfx);
             completedRecipies++;
             if(completedRecipies >= numberOfRecipes)
             {

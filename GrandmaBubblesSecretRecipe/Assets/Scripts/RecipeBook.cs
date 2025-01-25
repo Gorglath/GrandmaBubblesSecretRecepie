@@ -33,6 +33,9 @@ public class RecipeBook : MonoBehaviour
             if(entry.IngredientListing == listing)
             {
                 entry.Complete();
+                var sfxCollection = SfxService.Instance.SfxData.KictchenUtils.RecipeBook.ItemCompleted;
+                var sfx = sfxCollection[Random.Range(0, sfxCollection.Length)];
+                SfxService.Instance.PlayOneShoot(sfx);
                 break;
             }
         }

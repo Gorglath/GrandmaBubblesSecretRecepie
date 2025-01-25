@@ -15,6 +15,9 @@ public class Sauser : MonoBehaviour
                 if(!sausablePlayer.TryGetComponent<Sauce>(out _))
                 {
                     sausablePlayer.AddComponent<Sauce>();
+                    var sfxCollection = SfxService.Instance.SfxData.KictchenUtils.Saucer.Sauce;
+                    var sfx = sfxCollection[Random.Range(0, sfxCollection.Length)];
+                    SfxService.Instance.PlayOneShoot(sfx);
                 }
             }
         }
