@@ -22,27 +22,32 @@ public class Recipe : ScriptableObject
                 continue;
             }
 
-            if(ingredientListing.shouldBeCooked && !ingredient.isCooked())
+            if((ingredientListing.shouldBeCooked && !ingredient.isCooked())
+                || (!ingredientListing.shouldBeCooked && ingredient.isCooked()))
             {
                 continue;
             }
 
-            if(ingredientListing.shouldBeGrated && !ingredient.isGrated())
+            if((ingredientListing.shouldBeGrated && !ingredient.isGrated())
+                || (!ingredientListing.shouldBeGrated && ingredient.isGrated()))
             {
                 continue;
             }
 
-            if(ingredientListing.shouldBeSauced && !ingredient.isSauced())
+            if((ingredientListing.shouldBeSauced && !ingredient.isSauced())
+                || (!ingredientListing.shouldBeSauced && ingredient.isSauced()))
             {
                 continue;
             }
 
-            if(ingredientListing.shouldBePowdered && !ingredient.isPowdered())
+            if((ingredientListing.shouldBePowdered && !ingredient.isPowdered())
+                || (!ingredientListing.shouldBePowdered && ingredient.isPowdered()))
             {
                 continue;
             }
 
-            if(ingredientListing.shouldBeSliced && !ingredient.isSliced())
+            if((ingredientListing.shouldBeSliced && !ingredient.isSliced()) 
+                || (!ingredientListing.shouldBeSliced && ingredient.isSliced()))
             {
                 continue;
             }
