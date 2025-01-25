@@ -17055,6 +17055,7 @@ MonoBehaviour:
   minZoom: 12.5
   zoomLimit: 10
   zoomSpeed: 2
+  maxY: -8
 --- !u!1001 &421954516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51163,7 +51164,7 @@ Transform:
   m_GameObject: {fileID: 1339130563}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.39808464, y: -0.94805, z: -13.492078}
+  m_LocalPosition: {x: -0.39808464, y: -8.4, z: -13.492078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
