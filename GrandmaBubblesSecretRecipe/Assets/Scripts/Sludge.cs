@@ -18,6 +18,7 @@ public class Sludge : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D sludgeRigidbody;
 
+    private AudioSource moveSource;
     private GameObject mainView;
     private bool attachedToWall;
     private bool grounded;
@@ -54,11 +55,22 @@ public class Sludge : MonoBehaviour, IPossesable
         var gravity = -Physics.gravity.y * 0.5f;
         if (moveDirection == Vector2.zero)
         {
+            if (moveSource.isPlaying)
+            {
+                moveSource.Stop();
+            }
+
             if (attachedToWall)
             {
                 sludgeRigidbody.AddForce(new Vector2(0.0f, gravity));
             }
             return;
+        } else
+        {
+            if (!moveSource.isPlaying)
+            {
+                moveSource.Play();
+            }
         }
 
         var currentSpeed = sludgeRigidbody.linearVelocity.magnitude;
@@ -72,12 +84,16 @@ public class Sludge : MonoBehaviour, IPossesable
     {
         mainView = Instantiate(sludgeMainViewPrefab, transform);
         viewAnimator = mainView.GetComponent<Animator>();
+        var sfx = SfxService.Instance.SfxData.Ingredients.Sludge.Move;
+        moveSource = SfxService.Instance.PrepareSound(sfx);
+        moveSource.loop = true; 
     }
 
     public void OnDeath()
     {
         Destroy(mainView);
         Destroy(gameObject);
+        Destroy(moveSource.gameObject);
     }
 
     public Vector3 GetCenterPosition()

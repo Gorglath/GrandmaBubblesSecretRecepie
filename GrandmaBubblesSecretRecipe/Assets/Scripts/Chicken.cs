@@ -39,6 +39,9 @@ public class Chicken : MonoBehaviour, IPossesable
         grounded = false;
         waitingToDecsend = true;
         chickenRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        var sfx = SfxService.Instance.SfxData.Ingredients.Chicken.Jump;
+        SfxService.Instance.PlayOneShoot(sfx);
     }
 
     public void OnMove(Vector2 moveDirection)

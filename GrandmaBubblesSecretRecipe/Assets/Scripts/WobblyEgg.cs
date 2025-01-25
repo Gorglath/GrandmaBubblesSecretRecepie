@@ -84,6 +84,7 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     {
         Destroy(view);
         Destroy(gameObject);
+        Destroy(walkSfxSource.gameObject);
     }
 
     public Vector3 GetCenterPosition()
