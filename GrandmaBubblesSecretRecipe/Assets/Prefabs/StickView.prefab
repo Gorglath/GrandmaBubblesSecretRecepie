@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5746201388957992674}
   - component: {fileID: 4068994835297333849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 930286614633157109}
   - component: {fileID: 2159091740900715296}
   - component: {fileID: 8397053686160702912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StickView
   m_TagString: Untagged
   m_Icon: {fileID: 0}

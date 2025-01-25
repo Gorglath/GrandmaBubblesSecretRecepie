@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3430991737734907365}
   - component: {fileID: 5054368347130097460}
   - component: {fileID: 2897592010809061611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sludge
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

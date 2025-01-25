@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1833514502249953835}
   - component: {fileID: 6489937227054802658}
   - component: {fileID: 5716662519356371558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WooblyEgg
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

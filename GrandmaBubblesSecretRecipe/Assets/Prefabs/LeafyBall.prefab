@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3430991737734907365}
   - component: {fileID: 5054368347130097460}
   - component: {fileID: 4851749036497459177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeafyBall
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1753294458573815794}
   - component: {fileID: 8379078598699298276}
   - component: {fileID: 2583768724579193392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BounceCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

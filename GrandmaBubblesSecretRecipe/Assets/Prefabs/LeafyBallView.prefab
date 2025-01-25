@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7166853590001985766}
   - component: {fileID: 1391700031334566414}
   - component: {fileID: 8072327082283248951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeafyBallView
   m_TagString: Untagged
   m_Icon: {fileID: 0}

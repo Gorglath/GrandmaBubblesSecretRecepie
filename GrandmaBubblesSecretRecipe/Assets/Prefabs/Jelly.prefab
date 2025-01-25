@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18818551791498764}
   - component: {fileID: 3183795108140537482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: inActiveCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5731859235920993126}
   - component: {fileID: 3240098232721765783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ActiveColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 354832457989565556}
   - component: {fileID: -8914652937041817472}
   - component: {fileID: 759966265232511322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jelly
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

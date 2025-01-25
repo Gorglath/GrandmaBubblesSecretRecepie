@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7871081649073506756}
   - component: {fileID: 4626185910829407822}
   - component: {fileID: 3013345708627814932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlourView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 3398106773803292886}
   - component: {fileID: 4742771011189272116}
   - component: {fileID: 163032801871527318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

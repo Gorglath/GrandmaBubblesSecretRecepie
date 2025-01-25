@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3274309999449540073}
   - component: {fileID: 7168163800945376871}
   - component: {fileID: 3914651353232543074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SludgeView
   m_TagString: Untagged
   m_Icon: {fileID: 0}

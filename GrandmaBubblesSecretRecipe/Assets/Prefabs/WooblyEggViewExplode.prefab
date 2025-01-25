@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7907273975646459773}
   - component: {fileID: 7416743286850629755}
   - component: {fileID: 8208690660047058531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WooblyEggViewExplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
