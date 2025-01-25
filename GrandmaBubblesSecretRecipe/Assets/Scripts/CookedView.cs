@@ -22,7 +22,7 @@ public class CookedView : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        barFillImage.fillAmount = state.cookValue/2.0f;
+        barFillImage.fillAmount = Mathf.Clamp01(state.cookValue);
         transform.position = state.transform.position + offset;
     }
 }
