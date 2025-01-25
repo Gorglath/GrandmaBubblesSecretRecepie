@@ -24,6 +24,7 @@ public class Chicken : MonoBehaviour, IPossesable
     [SerializeField]
     private float descendGravity;
 
+    private Animator viewAnimator;
     private GameObject mainView;
     private bool waitingToDecsend;
     private bool grounded;
@@ -39,6 +40,7 @@ public class Chicken : MonoBehaviour, IPossesable
         grounded = false;
         waitingToDecsend = true;
         chickenRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        viewAnimator.SetTrigger("Mouse down");
 
         var sfx = SfxService.Instance.SfxData.Ingredients.Chicken.Jump;
         SfxService.Instance.PlayOneShoot(sfx);
@@ -56,6 +58,7 @@ public class Chicken : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         mainView = Instantiate(chickenView, transform);
+        viewAnimator = mainView.GetComponent<Animator>();
     }
 
     public void OnDeath()
@@ -122,6 +125,7 @@ public class Chicken : MonoBehaviour, IPossesable
         {
             grounded = true;
             chickenRigidbody.gravityScale = 1.0f;
+            viewAnimator.SetTrigger("Mouse up");
         }
     }
 

@@ -45,7 +45,6 @@ public class Jelly : MonoBehaviour, IPossesable
         inActiveColliders.SetActive(isActive);
 
         isActive = true;
-        jellyRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
         var raycast = Physics2D.RaycastAll(jellyRigidbody.position, Vector2.down, 1.2f);
         if (raycast.Any(r => r.transform.CompareTag("Platform")))
@@ -71,7 +70,6 @@ public class Jelly : MonoBehaviour, IPossesable
         activeColliders.SetActive(!isActive);
         inActiveColliders.SetActive(isActive);
         isActive = false;
-        jellyRigidbody.constraints = RigidbodyConstraints2D.None;
 
         jellyRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         viewAnimator.SetTrigger("Mouse up");
@@ -85,11 +83,6 @@ public class Jelly : MonoBehaviour, IPossesable
 
     public void OnMove(Vector2 moveDirection)
     {
-        if (isActive)
-        {
-            return;
-        }
-
         if (moveDirection == Vector2.zero)
         {
             if (moveSource.isPlaying)
