@@ -39,6 +39,9 @@ public class BubblePossesable : MonoBehaviour, IPossesable
         {
             var possessable = availableGenerator.GetPossesableInstance(playerController.transform);
             playerController.Possess(possessable);
+
+            var sfxService = SfxService.Instance;
+            sfxService.PlayOneShoot(sfxService.SfxData.Posses);
         }
     }
 

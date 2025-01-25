@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SfxData
   m_EditorClassIdentifier: 
   MainMusic:
-    volume: 0.8
+    volume: 0.5
     audioClip: {fileID: 8300000, guid: a239496c1bd2f854d961db7110e1984c, type: 3}
   Ingredients:
     Chicken:
@@ -22,12 +22,18 @@ MonoBehaviour:
         audioClip: {fileID: 0}
     Egg:
       Run:
-        volume: 0
-        audioClip: {fileID: 0}
+        volume: 0.8
+        audioClip: {fileID: 8300000, guid: e4fe43d11f5e19c408af3c9bd45be230, type: 3}
       Jump:
-        volume: 0
-        audioClip: {fileID: 0}
-      Break: []
+        volume: 0.6
+        audioClip: {fileID: 8300000, guid: 27459bab1722076449841a9d94be1e9d, type: 3}
+      Break:
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 43925c7a32c18a048b66c8cd79c9a08f, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 806c8a85aefffee44a7b6a2d70177480, type: 3}
+      - volume: 0.8
+        audioClip: {fileID: 8300000, guid: 1438f1d5c5a3a9b438c47e501bfbfb6e, type: 3}
     Sludge:
       Move:
         volume: 0
@@ -85,6 +91,9 @@ MonoBehaviour:
         volume: 0
         audioClip: {fileID: 0}
     RecipeBook:
+      RecipeComplete:
+        volume: 0
+        audioClip: {fileID: 0}
       ItemCompleted:
         volume: 0
         audioClip: {fileID: 0}

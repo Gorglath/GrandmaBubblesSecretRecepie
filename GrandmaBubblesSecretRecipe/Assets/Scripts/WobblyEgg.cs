@@ -26,6 +26,7 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     private GameObject view;
     private PlayerController playerController;
     private bool grounded;
+    private AudioSource walkSfxSource;
 
     public IngredientType IngerdientType => IngredientType.Egg;
     public void OnActionDown()
@@ -49,6 +50,19 @@ public class WobblyEgg : MonoBehaviour, IPossesable
 
     public void OnMove(Vector2 moveDirection)
     {
+        if (moveDirection == Vector2.zero)
+        {
+            if (walkSfxSource.isPlaying)
+            {
+                walkSfxSource.Stop();
+            }
+        } else
+        {
+            if (!walkSfxSource.isPlaying)
+            {
+                walkSfxSource.Play();
+            }
+        }
         var currentSpeed = eggRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
@@ -60,6 +74,10 @@ public class WobblyEgg : MonoBehaviour, IPossesable
     {
         view = Instantiate(eggViewPrefab, transform);
         this.playerController = playerController;
+
+        var sfx = SfxService.Instance.SfxData.Ingredients.Egg.Run;
+        this.walkSfxSource = SfxService.Instance.PrepareSound(sfx);
+        walkSfxSource.loop = true;
     }
 
     public void OnDeath()
@@ -112,6 +130,10 @@ public class WobblyEgg : MonoBehaviour, IPossesable
         if(eggRigidbody.linearVelocity.magnitude > breakMovementSpeed)
         {
             var eggVFX = Instantiate(eggBreakVFX, eggRigidbody.position, eggRigidbody.transform.rotation);
+            var breakSounds = SfxService.Instance.SfxData.Ingredients.Egg.Break;
+            var sfx = breakSounds[Random.Range(0, breakSounds.Length)];
+            SfxService.Instance.PlayOneShoot(sfx);
+            walkSfxSource.Stop();
             Destroy(eggVFX, 5.0f);
             playerController.Die();
         }
