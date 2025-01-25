@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SfxData
   m_EditorClassIdentifier: 
   MainMusic:
-    volume: 0
+    volume: 0.5
     audioClip: {fileID: 8300000, guid: a239496c1bd2f854d961db7110e1984c, type: 3}
   Ingredients:
     Chicken:
