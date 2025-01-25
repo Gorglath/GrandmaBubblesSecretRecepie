@@ -1,6 +1,5 @@
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Jelly : MonoBehaviour, IPossesable
 {
@@ -112,6 +111,14 @@ public class Jelly : MonoBehaviour, IPossesable
         var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Move;
         moveSource = SfxService.Instance.PrepareSound(sfx);
         moveSource.loop = true;
+
+        foreach (Transform child in view.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()

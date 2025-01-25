@@ -8,6 +8,9 @@ public class PossessableGenerator : MonoBehaviour
     [SerializeField]
     private Transform spawnLocation;
 
+    [SerializeField]
+    private ParticleSystem possessableParticleSystem;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.attachedRigidbody.TryGetComponent<BubblePossesable>(out var bubblePossesable))
@@ -16,6 +19,7 @@ public class PossessableGenerator : MonoBehaviour
         }
 
         bubblePossesable.RegisterPossesable(this);
+        possessableParticleSystem.Play();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -26,6 +30,7 @@ public class PossessableGenerator : MonoBehaviour
         }
 
         bubblePossesable.DeregisterPossesable(this);
+        possessableParticleSystem.Stop();
     }
 
     public IPossesable GetPossesableInstance(Transform parent)

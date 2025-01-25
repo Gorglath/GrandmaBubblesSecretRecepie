@@ -51,12 +51,21 @@ public class MenuPlayerController : MonoBehaviour
 
     private Color GetColorByPlayerIndex()
     {
-        return playerInput.playerIndex switch
+        switch (playerInput.playerIndex)
         {
-            0 => Color.red,
-            1 => Color.yellow,
-            2 => Color.cyan,
-            3 => Color.green
-        };
+            case 0:
+                ColorUtility.TryParseHtmlString("#c23551", out var redColor);
+                return redColor;
+            case 1:
+                ColorUtility.TryParseHtmlString("#c2a537", out var yellowColor);
+                return yellowColor;
+            case 2:
+                ColorUtility.TryParseHtmlString("#3590c4 ", out var blueColor);
+                return blueColor;
+            case 3:
+            default:
+                ColorUtility.TryParseHtmlString("#c23551", out var greenColor);
+                return greenColor;
+        }
     }
 }

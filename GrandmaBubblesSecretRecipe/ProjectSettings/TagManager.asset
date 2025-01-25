@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Ingredient
   - Kitchen
+  - Indicator
   layers:
   - Default
   - TransparentFX

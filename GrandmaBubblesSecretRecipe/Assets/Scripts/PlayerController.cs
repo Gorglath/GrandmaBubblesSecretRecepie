@@ -124,4 +124,24 @@ public class PlayerController : MonoBehaviour
     {
         return activePossesable.GetCenterPosition();
     }
+
+    public Color GetColorByPlayerIndex()
+    {
+        switch (playerInput.playerIndex)
+        {
+            case 0:
+                ColorUtility.TryParseHtmlString("#c23551", out var redColor);
+                return redColor;
+            case 1:
+                ColorUtility.TryParseHtmlString("#c2a537", out var yellowColor);
+                return yellowColor;
+            case 2:
+                ColorUtility.TryParseHtmlString("#3590c4 ", out var blueColor);
+                return blueColor;
+            case 3:
+            default:
+                ColorUtility.TryParseHtmlString("#c23551", out var greenColor);
+                return greenColor;
+        }
+    }
 }

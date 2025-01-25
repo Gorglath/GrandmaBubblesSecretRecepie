@@ -86,7 +86,15 @@ public class Sludge : MonoBehaviour, IPossesable
         viewAnimator = mainView.GetComponent<Animator>();
         var sfx = SfxService.Instance.SfxData.Ingredients.Sludge.Move;
         moveSource = SfxService.Instance.PrepareSound(sfx);
-        moveSource.loop = true; 
+        moveSource.loop = true;
+
+        foreach (Transform child in mainView.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()
