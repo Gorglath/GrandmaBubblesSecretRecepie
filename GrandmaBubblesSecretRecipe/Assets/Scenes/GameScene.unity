@@ -337,10 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bcebd377461fc469c8f99ac069416e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliceParticleSystem: {fileID: 2057046733}
-  smallIngredientParticleAmount: 50
-  mediumIngredientParticleAmount: 100
-  bigIngredientParticleAmount: 300
 --- !u!1001 &53221571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6854,12 +6850,24 @@ PrefabInstance:
       value: ChickenView
       objectReference: {fileID: 0}
     - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.45
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.95
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 1752584325625515214, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8206,10 +8214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grateView: {fileID: 636623894849538814, guid: 98f063caa61da2a4e8894c979046128f, type: 3}
-  grateParticleSystem: {fileID: 289413257}
-  smallIngredientParticleAmount: 1
-  mediumIngredientParticleAmount: 5
-  bigIngredientParticleAmount: 10
   grateAmountPerMove: 0.1
 --- !u!1 &798007429
 GameObject:
@@ -11526,7 +11530,6 @@ MonoBehaviour:
   playerInputManager: {fileID: 1732179303}
   playerPrefab: {fileID: 6452742978914271550, guid: eca9618e394c0a8478e9f169f454e44f, type: 3}
   cameraManager: {fileID: 414604689}
-  recipeBook: {fileID: 1803330623}
   recipes:
   - {fileID: 11400000, guid: f8c1b21da1fad804ca730fa426ae16d6, type: 2}
   - {fileID: 11400000, guid: f8c1b21da1fad804ca730fa426ae16d6, type: 2}
