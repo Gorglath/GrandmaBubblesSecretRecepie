@@ -25,6 +25,7 @@ public class Jelly : MonoBehaviour, IPossesable
     [SerializeField]
     private Rigidbody2D jellyRigidbody;
 
+    private Animator viewAnimator;
     private GameObject view;
     private bool isActive;
 
@@ -56,6 +57,7 @@ public class Jelly : MonoBehaviour, IPossesable
         {
             activeColliders.transform.rotation = Quaternion.FromToRotation(Vector2.up, inActiveColliders.transform.up);
         }
+        viewAnimator.SetTrigger("Mouse down");
     }
 
     public void OnActionUp()
@@ -71,6 +73,7 @@ public class Jelly : MonoBehaviour, IPossesable
         jellyRigidbody.constraints = RigidbodyConstraints2D.None;
 
         jellyRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        viewAnimator.SetTrigger("Mouse up");
     }
 
     public void OnAction()
@@ -96,6 +99,7 @@ public class Jelly : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         view = Instantiate(jellyViewPrefab, transform);
+        viewAnimator = view.GetComponent<Animator>();
     }
 
     public void OnDeath()

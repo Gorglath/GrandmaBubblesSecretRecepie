@@ -10880,7 +10880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possessablePrefab: {fileID: 7873134115755731406, guid: 8b0b02de70a95c04dbe100d292d76e97, type: 3}
-  spawnLocation: {fileID: 0}
+  spawnLocation: {fileID: 53221572}
 --- !u!1 &1461592050
 GameObject:
   m_ObjectHideFlags: 0
