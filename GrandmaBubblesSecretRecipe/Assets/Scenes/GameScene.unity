@@ -393,6 +393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JellyView (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8226696502920851484, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8341943921885431199, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
     - {fileID: 31370698408815829, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
@@ -9953,7 +9957,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1319117807}
   - component: {fileID: 1319117806}
-  - component: {fileID: 1319117805}
   m_Layer: 7
   m_Name: Level design
   m_TagString: Untagged
@@ -9961,52 +9964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1319117805
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319117804}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 1
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 26.706062, y: 14.97}
-    newSize: {x: 26.706062, y: 14.97}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &1319117806
 SpriteRenderer:
   m_ObjectHideFlags: 0
