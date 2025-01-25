@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 300
   maxMovementSpeed: 10
-  jumpForce: 5
+  jumpForce: 7
   activeColliders: {fileID: 6654460685635166573}
   inActiveColliders: {fileID: 505994241065246998}
   jellyViewPrefab: {fileID: 5373934858511267131, guid: f82dfc16bc7620048b92f757273879bf, type: 3}

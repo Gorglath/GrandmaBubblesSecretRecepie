@@ -16,10 +16,13 @@ public class Cheese : MonoBehaviour, IPossesable
     private float activeAriseForce;
 
     [SerializeField]
+    private float yeetForce;
+
+    [SerializeField]
     private GameObject cheeseView;
 
     [SerializeField]
-    private Rigidbody2D CheeseRigidbody;
+    private Rigidbody2D cheeseRigidbody;
 
     private AudioSource moveSource;
     private GameObject mainView;
@@ -51,11 +54,11 @@ public class Cheese : MonoBehaviour, IPossesable
             }
         }
 
-        var currentSpeed = CheeseRigidbody.linearVelocity.magnitude;
+        var currentSpeed = cheeseRigidbody.linearVelocity.magnitude;
         var moveStep = moveDirection * movementSpeed * Time.deltaTime;
         moveStep.y = 0.0f;
         var actualForce = moveStep * (1 - currentSpeed / maxMovementSpeed);
-        CheeseRigidbody.AddForce(actualForce);
+        cheeseRigidbody.AddForce(actualForce);
     }
 
     public void OnPossessed(PlayerController playerController)
@@ -93,7 +96,7 @@ public class Cheese : MonoBehaviour, IPossesable
     public void Arise()
     {
         var maxAngle = 1f;
-        var lookDirection = CheeseRigidbody.transform.up;
+        var lookDirection = cheeseRigidbody.transform.up;
         var targetDirection = isActive ? isFacingRight ? Vector2.right : Vector2.left : Vector2.up;
         var cross = Vector3.Cross(targetDirection, lookDirection);
         var sign = Mathf.Sign(cross.z);
@@ -107,7 +110,7 @@ public class Cheese : MonoBehaviour, IPossesable
         if (absAngle > maxAngle)
         {
             var targetForce = isActive ? activeAriseForce : ariseForce;
-            CheeseRigidbody.AddTorque(-sign * Time.deltaTime * targetForce);
+            cheeseRigidbody.AddTorque(-sign * Time.deltaTime * targetForce);
         }
     }
     public void OnActionDown()
@@ -118,6 +121,9 @@ public class Cheese : MonoBehaviour, IPossesable
     public void OnActionUp()
     {
         isActive = false;
+        var forceDirection = isFacingRight ? Vector2.left : Vector2.right;
+        var finalForce = forceDirection / 2.0f + Vector2.up;
+        cheeseRigidbody.AddForce(finalForce * yeetForce, ForceMode2D.Impulse);
     }
 
     public bool isCooked()

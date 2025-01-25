@@ -75,7 +75,7 @@ MonoBehaviour:
   movementSpeed: 300
   maxMovementSpeed: 10
   ariseForce: 700
-  jumpForce: 6
+  jumpForce: 10
   chickenView: {fileID: 340883368807813442, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
   chickenRigidbody: {fileID: 5414971548511210816}
   descendGravity: 0.2
