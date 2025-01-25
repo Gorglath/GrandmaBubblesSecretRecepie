@@ -27,6 +27,9 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     private float zoomSpeed;
 
+    [SerializeField]
+    private float maxY;
+
     private List<PlayerController> activePlayers = new List<PlayerController>();
     public void RegisterPlayer(PlayerController player)
     {
@@ -79,6 +82,11 @@ public class CameraManager : MonoBehaviour
         var offsetPosition = centerPosition + movementOffset;
         var velocity = Vector3.zero;
         mainCamera.transform.position = Vector3.SmoothDamp(mainCamera.transform.position, offsetPosition, ref velocity, Time.deltaTime * followSpeed);
+        var cameraPosition = mainCamera.transform.position;
+        if(cameraPosition.y < maxY)
+        {
+            mainCamera.transform.position = new Vector3(cameraPosition.x, maxY, cameraPosition.z);
+        }
     }
 
     private Vector3 GetCenterPosition()
