@@ -337,6 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bcebd377461fc469c8f99ac069416e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sliceParticleSystem: {fileID: 2057046733}
+  smallIngredientParticleAmount: 50
+  mediumIngredientParticleAmount: 100
+  bigIngredientParticleAmount: 200
 --- !u!1001 &53221571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +400,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8341943921885431199, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
     - {fileID: 31370698408815829, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
+    - {fileID: 9213198982015953567, guid: f82dfc16bc7620048b92f757273879bf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2026,7 +2031,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 5000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 1
@@ -6905,9 +6910,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5858477392380318439, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7919374818810069502, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
     - {fileID: 7744545667377731136, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+    - {fileID: 7747476978368288925, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
+    - {fileID: 9196775925450500095, guid: 0df78ba44a1d33940a4234d2082b832e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8214,6 +8225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grateView: {fileID: 636623894849538814, guid: 98f063caa61da2a4e8894c979046128f, type: 3}
+  grateParticleSystem: {fileID: 289413257}
+  smallIngredientParticleAmount: 1
+  mediumIngredientParticleAmount: 3
+  bigIngredientParticleAmount: 5
   grateAmountPerMove: 0.1
 --- !u!1 &798007429
 GameObject:
@@ -11530,6 +11545,7 @@ MonoBehaviour:
   playerInputManager: {fileID: 1732179303}
   playerPrefab: {fileID: 6452742978914271550, guid: eca9618e394c0a8478e9f169f454e44f, type: 3}
   cameraManager: {fileID: 414604689}
+  recipeBook: {fileID: 1803330623}
   recipes:
   - {fileID: 11400000, guid: 2017f7fbdc1ec314ea4741a4c9f8c284, type: 2}
   - {fileID: 11400000, guid: 79c1abd83a93bdc41bf396ce56e052ef, type: 2}
@@ -18705,6 +18721,10 @@ PrefabInstance:
     - target: {fileID: 3677163790568048901, guid: c1eaeab0b883732419273b5c6a9a1c98, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[102].y
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164203003219288614, guid: c1eaeab0b883732419273b5c6a9a1c98, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8253013222417206905, guid: c1eaeab0b883732419273b5c6a9a1c98, type: 3}
       propertyPath: m_Name
