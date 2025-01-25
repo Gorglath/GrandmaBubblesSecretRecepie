@@ -67,6 +67,14 @@ public class Cheese : MonoBehaviour, IPossesable
         var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Move;
         moveSource = SfxService.Instance.PrepareSound(sfx);
         moveSource.loop = true;
+
+        foreach (Transform child in mainView.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()

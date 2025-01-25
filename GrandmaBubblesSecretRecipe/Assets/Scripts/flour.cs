@@ -52,6 +52,14 @@ public class flour : MonoBehaviour, IPossesable
     public void OnPossessed(PlayerController playerController)
     {
         mainView = Instantiate(flourView, transform);
+
+        foreach (Transform child in mainView.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()

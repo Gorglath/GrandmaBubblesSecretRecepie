@@ -105,6 +105,14 @@ public class LeafyBall : MonoBehaviour, IPossesable
         var sfx = SfxService.Instance.SfxData.Ingredients.Cabbage.Move;
         moveSource = SfxService.Instance.PrepareSound(sfx);
         moveSource.loop = true;
+
+        foreach(Transform child in view.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()

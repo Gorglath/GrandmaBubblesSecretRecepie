@@ -77,6 +77,14 @@ public class Stick : MonoBehaviour, IPossesable
     {
         view = Instantiate(stickViewPrefab, transform);
         viewAnimator = view.GetComponent<Animator>();
+
+        foreach (Transform child in view.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()

@@ -59,6 +59,14 @@ public class Chicken : MonoBehaviour, IPossesable
     {
         mainView = Instantiate(chickenView, transform);
         viewAnimator = mainView.GetComponent<Animator>();
+
+        foreach (Transform child in mainView.transform)
+        {
+            if (child.CompareTag("Indicator"))
+            {
+                child.GetComponent<SpriteRenderer>().color = playerController.GetColorByPlayerIndex();
+            }
+        }
     }
 
     public void OnDeath()
