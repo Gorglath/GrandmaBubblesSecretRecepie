@@ -17142,7 +17142,7 @@ MonoBehaviour:
   minZoom: 12.5
   zoomLimit: 10
   zoomSpeed: 2
-  maxY: -5
+  maxY: -1.66
 --- !u!1001 &421954516
 PrefabInstance:
   m_ObjectHideFlags: 0

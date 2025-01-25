@@ -171,7 +171,7 @@ public class Jelly : MonoBehaviour, IPossesable
             return;
         }
 
-        if (collision.attachedRigidbody.CompareTag("Ingrediant"))
+        if (collision.attachedRigidbody.CompareTag("Ingredient"))
         {
             var sfx = SfxService.Instance.SfxData.Ingredients.Jelly.Hit;
             SfxService.Instance.PlayOneShoot(sfx);
