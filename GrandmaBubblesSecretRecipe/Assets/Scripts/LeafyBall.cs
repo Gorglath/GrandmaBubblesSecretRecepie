@@ -12,6 +12,9 @@ public class LeafyBall : MonoBehaviour, IPossesable
     private float ariseSpeed;
 
     [SerializeField]
+    private float bounceForce;
+
+    [SerializeField]
     private GameObject leafViewPrefab;
 
     [SerializeField]
@@ -26,6 +29,8 @@ public class LeafyBall : MonoBehaviour, IPossesable
     private bool tryingToActivate;
 
     public IngredientType IngerdientType => IngredientType.Cabbage;
+    public bool Active => isActive;
+
     public void OnActionDown()
     {
     }
@@ -129,9 +134,16 @@ public class LeafyBall : MonoBehaviour, IPossesable
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isActive)
+        if (!isActive || collision.attachedRigidbody == null)
         {
             return;
+        }
+
+        if (collision.attachedRigidbody.CompareTag("Ingredient"))
+        {
+            var collisionBounceDirection = collision.attachedRigidbody.position - leafRigidbody.position;
+            var jumpForce = collision.attachedRigidbody.TryGetComponent<WobblyEgg>(out _) ? bounceForce * 0.3f : bounceForce; 
+            collision.attachedRigidbody.AddForce(collisionBounceDirection.normalized * jumpForce, ForceMode2D.Impulse);
         }
 
         viewAnimator.SetTrigger("Got Hit");

@@ -76,6 +76,7 @@ MonoBehaviour:
   movementSpeed: 300
   maxMovementSpeed: 10
   ariseSpeed: 800
+  bounceForce: 10
   leafViewPrefab: {fileID: 5373934858511267131, guid: ef2ecd1bab0f9124781aa3bf06445951, type: 3}
   leafRigidbody: {fileID: 5054368347130097460}
   bounceObject: {fileID: 8869913514994448466}
@@ -197,9 +198,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.8

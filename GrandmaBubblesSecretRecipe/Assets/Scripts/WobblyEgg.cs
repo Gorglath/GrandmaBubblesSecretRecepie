@@ -84,11 +84,16 @@ public class WobblyEgg : MonoBehaviour, IPossesable
         }
 
         var possessable = collision.GetComponentInParent<IPossesable>();
-        if (possessable != null && possessable is Jelly jelly && jelly.Active)
+        if (possessable != null)
         {
-            eggRigidbody.linearVelocity = Vector2.zero;
-            eggRigidbody.angularVelocity = 0.0f;
-            return;
+            if (possessable is Jelly jelly && jelly.Active) {
+                eggRigidbody.linearVelocity = Vector2.zero;
+                eggRigidbody.angularVelocity = 0.0f;
+                return;
+            } else if(possessable is LeafyBall leafyBall && leafyBall.Active)
+            {
+                return;
+            }
         }
 
         if(collision.TryGetComponent<PossessableGenerator>(out _))

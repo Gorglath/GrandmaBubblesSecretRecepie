@@ -15,7 +15,6 @@ public class GameLoader
 
     private void OnSceneLoaded((int, InputDevice)[] players)
     {
-        Debug.Log("Why?");
         var gameManager = Object.FindAnyObjectByType<GameManager>();
         gameManager.StartGame(players);
     }
